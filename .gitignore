@@ -19,6 +19,9 @@ wandb/
 lightning_logs/
 outputs/
 results/
+cloud_results/*
+!cloud_results/README.md
+!cloud_results/*.md
 *.ckpt
 *.ckpt.tmp
 
