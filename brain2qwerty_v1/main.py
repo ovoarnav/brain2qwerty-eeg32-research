@@ -4,6 +4,9 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
+import hashlib
+import json
+import os
 from pathlib import Path
 
 import lightning.pytorch as pl
@@ -27,13 +30,24 @@ from .metrics import CER
 from .pl_module import BrainModule
 from .utils import (
     ChannelPositions2D,
+    EegChannelPositions2D,
     SentenceGroupedDistributedSampler,
     materialize_lazy_params,
 )
 
 
+def _windows_safe_timeline_cache_key(timeline: dict) -> str:
+    """Stable Exca item key that contains no Windows-reserved filename chars."""
+    payload = json.dumps(timeline, sort_keys=True, default=str, separators=(",", ":"))
+    digest = hashlib.sha256(payload.encode("utf-8")).hexdigest()[:16]
+    readable = "-".join(
+        str(timeline.get(key, "unknown")) for key in ("subject", "session", "task")
+    )
+    return f"{readable}-{digest}"
+
+
 class Data(pydantic.BaseModel):
-    """Builds train/val/test dataloaders of keystroke-aligned MEG windows.
+    """Builds train/val/test dataloaders of keystroke-aligned neural windows.
 
     Runs the study, applies the preprocessing/split transforms, prepares the
     feature extractors, and creates one dataloader per split whose sampler keeps
@@ -58,6 +72,11 @@ class Data(pydantic.BaseModel):
     persistent_workers: bool = False
 
     def build_events(self):
+        # neuralset 0.2.2 uses raw JSON as an Exca filename for timeline caches.
+        # JSON's quotes and colons are invalid in Windows filenames; replacing the
+        # key function affects only cache addressing, never event values.
+        if os.name == "nt" and self.study.infra_timelines.folder is not None:
+            self.study.infra_timelines.item_uid = _windows_safe_timeline_cache_key
         events = self.study.run()
         for transform in self.transforms:
             events = transform.run(events)
@@ -68,9 +87,19 @@ class Data(pydantic.BaseModel):
         self.neuro.prepare(events)
         self.feature.prepare(events)
 
-        subject_id = ns.extractors.LabelEncoder(event_types="Meg", event_field="subject")
+        # Match the modality selected by the neuro extractor ("Meg" or "Eeg").
+        # The previous MEG literal made the otherwise modality-agnostic pipeline
+        # fail while preparing subject ids for EEG events.
+        subject_id = ns.extractors.LabelEncoder(
+            event_types=self.neuro.event_types, event_field="subject"
+        )
         subject_id.prepare(events)
-        channel_positions = ChannelPositions2D(neuro=self.neuro)
+        position_cls = (
+            EegChannelPositions2D
+            if self.study.__class__.__name__ == "Pinet2024Eeg"
+            else ChannelPositions2D
+        )
+        channel_positions = position_cls(neuro=self.neuro)
         channel_positions.prepare(events)
 
         extractors = {
@@ -128,6 +157,10 @@ class Experiment(pydantic.BaseModel):
     devices: int = 8
     output_dir: str = "."
     log_every_n_steps: int = 5
+    accumulate_grad_batches: int = 1
+    limit_train_batches: int | float = 1.0
+    limit_val_batches: int | float = 1.0
+    limit_test_batches: int | float = 1.0
 
     eval_only: bool = False
     ckpt_path: str | None = None
@@ -181,9 +214,14 @@ class Experiment(pydantic.BaseModel):
             devices=devices,
             strategy=strategy,
             max_epochs=self.n_epochs,
+            accumulate_grad_batches=self.accumulate_grad_batches,
+            limit_train_batches=self.limit_train_batches,
+            limit_val_batches=self.limit_val_batches,
+            limit_test_batches=self.limit_test_batches,
             gradient_clip_val=self.grad_max_norm,
             log_every_n_steps=self.log_every_n_steps,
             use_distributed_sampler=False,
+            enable_checkpointing=self.save_checkpoints,
             callbacks=callbacks,
             logger=loggers,
             default_root_dir=self.output_dir,
@@ -231,6 +269,43 @@ class Experiment(pydantic.BaseModel):
             self._trainer.test(self._module, dataloaders=loaders["test"])
 
 
+def _apply_runtime_overrides(cfg: dict, args) -> None:
+    """Apply compute-only CLI overrides without changing scientific settings."""
+    if args.output_dir is not None:
+        cfg["output_dir"] = args.output_dir
+    if args.batch_size is not None:
+        if args.batch_size < 1:
+            raise ValueError("--batch-size must be positive")
+        for key in ("batch_size", "val_batch_size", "test_batch_size"):
+            cfg["data"][key] = args.batch_size
+    if args.num_workers is not None:
+        if args.num_workers < 0:
+            raise ValueError("--num-workers cannot be negative")
+        cfg["data"]["num_workers"] = args.num_workers
+        if args.num_workers == 0:
+            cfg["data"]["persistent_workers"] = False
+    if args.no_pin_memory:
+        cfg["data"]["pin_memory"] = False
+    if args.accumulate_grad_batches is not None:
+        if args.accumulate_grad_batches < 1:
+            raise ValueError("--accumulate-grad-batches must be positive")
+        cfg["accumulate_grad_batches"] = args.accumulate_grad_batches
+    if args.max_epochs is not None:
+        if args.max_epochs < 1:
+            raise ValueError("--max-epochs must be positive")
+        cfg["n_epochs"] = args.max_epochs
+    for arg_name, config_name in (
+        ("limit_train_batches", "limit_train_batches"),
+        ("limit_val_batches", "limit_val_batches"),
+        ("limit_test_batches", "limit_test_batches"),
+    ):
+        value = getattr(args, arg_name)
+        if value is not None:
+            if value < 1:
+                raise ValueError(f"--{arg_name.replace('_', '-')} must be positive")
+            cfg[config_name] = value
+
+
 def main(argv: list[str] | None = None) -> None:
     """Run the experiment in a given mode:
 
@@ -242,7 +317,12 @@ def main(argv: list[str] | None = None) -> None:
     import studies  # noqa: F401  (registers the SpanishBCBL study)
 
     from .cli import add_wandb_args, wandb_config
-    from .config.xp_config import debug_config, experiment_config
+    from .config.xp_config import (
+        debug_config,
+        eeg_debug_config,
+        eeg_experiment_config,
+        experiment_config,
+    )
 
     parser = argparse.ArgumentParser(prog="brain2qwerty_v1")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -253,18 +333,56 @@ def main(argv: list[str] | None = None) -> None:
     p_eval.add_argument("--ckpt", required=True, help="checkpoint to evaluate")
     p_cache = sub.add_parser("cache", help="pre-warm the feature cache")
     p_cache.add_argument("--debug", action="store_true", help="only the debug subset")
+    for p in sub.choices.values():
+        p.add_argument(
+            "--modality",
+            choices=("meg", "eeg"),
+            default="meg",
+            help="recording modality (EEG enables the pre-hardware experiment)",
+        )
+        p.add_argument(
+            "--condition",
+            choices=("full", "eeg32"),
+            default="full",
+            help="EEG montage; ignored for MEG",
+        )
+        p.add_argument("--output-dir", default=None, help="override results directory")
+        p.add_argument("--batch-size", type=int, default=None)
+        p.add_argument("--num-workers", type=int, default=None)
+        p.add_argument("--no-pin-memory", action="store_true")
+        p.add_argument("--accumulate-grad-batches", type=int, default=None)
+        p.add_argument("--max-epochs", type=int, default=None)
+        p.add_argument("--limit-train-batches", type=int, default=None)
+        p.add_argument("--limit-val-batches", type=int, default=None)
+        p.add_argument("--limit-test-batches", type=int, default=None)
     for p in (sub.choices["debug"], p_train, p_eval):
         add_wandb_args(p)
     args = parser.parse_args(argv)
 
     if args.command == "cache":
-        cfg = debug_config() if args.debug else experiment_config()
+        if args.modality == "eeg":
+            cfg = (
+                eeg_debug_config(args.condition)
+                if args.debug
+                else eeg_experiment_config(args.condition)
+            )
+        else:
+            cfg = debug_config() if args.debug else experiment_config()
+        _apply_runtime_overrides(cfg, args)
         print("[brain2qwerty_v1] pre-warming the feature cache...")
         Experiment(**cfg).data.build()
         print("[brain2qwerty_v1] cache warmed.")
         return
 
-    cfg = debug_config() if args.command == "debug" else experiment_config()
+    if args.modality == "eeg":
+        cfg = (
+            eeg_debug_config(args.condition)
+            if args.command == "debug"
+            else eeg_experiment_config(args.condition)
+        )
+    else:
+        cfg = debug_config() if args.command == "debug" else experiment_config()
+    _apply_runtime_overrides(cfg, args)
     if args.command == "eval":
         cfg["eval_only"] = True
         cfg["ckpt_path"] = args.ckpt

@@ -6,12 +6,17 @@
 
 import typing as tp
 from collections import defaultdict
+from functools import lru_cache
 
+import mne
+import numpy as np
 import torch
 from torch.utils.data import Sampler
 
 from neuralset.extractors.base import BaseStatic
 from neuralset.extractors.neuro import ChannelPositions as _ChannelPositions
+
+from .eeg import EEG61_CHANNELS
 
 BUTTON_MAPPING = {
     "s": 0,
@@ -104,6 +109,51 @@ class ChannelPositions2D(_ChannelPositions):
                     f"neuro.event_types={self.neuro.event_types}."
                 )
             self._neuro = self.neuro
+
+
+@lru_cache(maxsize=1)
+def _full_eeg_layout_positions() -> dict[str, list[float]]:
+    """2D standard-1005 coordinates in the fixed 61-channel reference frame."""
+    info = mne.create_info(list(EEG61_CHANNELS), sfreq=1000.0, ch_types="eeg")
+    info.set_montage(mne.channels.make_standard_montage("standard_1005"))
+    layout = mne.find_layout(info)
+    return {name: pos[:2].tolist() for name, pos in zip(layout.names, layout.pos)}
+
+
+class EegChannelPositions2D(ChannelPositions2D):
+    """Keep FULL and EEG32 positions in the same full-montage coordinate frame.
+
+    neuralset normally min-max normalizes each selected channel set separately.
+    That would move the retained EEG32 sensors and violate the channel-only
+    intervention. This extractor projects and normalizes against the declared
+    61-channel standard-1005 frame, then returns only the selected channels.
+    """
+
+    def _get_layout_positions(self, ta) -> dict[str, list[float]]:
+        return _full_eeg_layout_positions()
+
+    def _compute_positions(self, ta) -> torch.Tensor:
+        if not self.normalize:
+            return super()._compute_positions(ta)
+
+        self.normalize = False
+        try:
+            out = super()._compute_positions(ta)
+        finally:
+            self.normalize = True
+
+        mapping = _full_eeg_layout_positions()
+        reference = np.asarray([mapping[name] for name in EEG61_CHANNELS])
+        minimum = reference.min(axis=0)
+        spread = reference.max(axis=0) - minimum
+        spread[spread == 0.0] = 1.0
+        channel_idx = self._neuro._get_channels(ta.ch_names)
+        raw = out[channel_idx] / self.factor
+        out[channel_idx] = (raw - torch.from_numpy(minimum).float()) / torch.from_numpy(
+            spread
+        ).float()
+        out[channel_idx] *= self.factor
+        return out
 
 
 # --- DDP sampler (keeps a sentence's keystrokes on one rank) ---------------

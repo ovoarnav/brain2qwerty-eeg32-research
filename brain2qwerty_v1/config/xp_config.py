@@ -4,9 +4,11 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
+import copy
 import os
 from pathlib import Path
 
+from ..eeg import EEG32_CHANNELS
 from ..utils import BUTTON_MAPPING, NUM_CLASSES
 from .model_config import ENCODER, TRANSFORMER
 
@@ -84,6 +86,46 @@ def experiment_config() -> dict:
 def debug_config() -> dict:
     """Smoke-test config: one timeline, 2 epochs, single GPU, no checkpoints."""
     cfg = experiment_config()
+    cfg["data"]["study"]["query"] = "timeline_index == 0"
+    cfg["n_epochs"] = 2
+    cfg["patience"] = 2
+    cfg["devices"] = 1
+    cfg["save_checkpoints"] = False
+    return cfg
+
+
+def eeg_experiment_config(condition: str = "full") -> dict:
+    """Official V1 architecture and preprocessing on SpanishBCBL EEG.
+
+    ``condition`` changes only the input montage: all available 61 EEG channels
+    for ``full`` or the fixed, ordered :data:`EEG32_CHANNELS` tuple for ``eeg32``.
+    The model, split, window, filtering, optimizer, and seed remain identical.
+    """
+    condition = condition.lower()
+    if condition not in {"full", "eeg32"}:
+        raise ValueError("condition must be 'full' or 'eeg32'")
+
+    cfg = copy.deepcopy(experiment_config())
+    cfg["output_dir"] = str(Path(RESULTS) / condition)
+    cfg["data"]["study"]["name"] = "Pinet2024Eeg"
+    cfg["data"]["neuro"] = {
+        "name": "EegExtractor",
+        "frequency": 50,
+        "filter": (0.1, 20.0),
+        "baseline": (0.0, 0.2),
+        "apply_proj": False,
+        "clamp": 5,
+        "scaler": "RobustScaler",
+        "picks": ("eeg",) if condition == "full" else EEG32_CHANNELS,
+        "channel_order": "original",
+        "infra": {"folder": CACHE, "cluster": None},
+    }
+    return cfg
+
+
+def eeg_debug_config(condition: str = "full") -> dict:
+    """One-timeline EEG integration run with the unchanged full V1 model."""
+    cfg = eeg_experiment_config(condition)
     cfg["data"]["study"]["query"] = "timeline_index == 0"
     cfg["n_epochs"] = 2
     cfg["patience"] = 2
