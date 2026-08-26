@@ -8,6 +8,9 @@ from pathlib import Path
 
 def train_seconds(log: Path) -> float | None:
     text = log.read_text(errors="replace")
+    portable = re.findall(r"B2Q_ELAPSED_SECONDS:\s*([0-9]+(?:\.[0-9]+)?)", text)
+    if portable:
+        return float(portable[-1])
     match = re.search(
         r"Elapsed \(wall clock\) time .*?:\s*(?:(\d+):)?(\d+):(\d+(?:\.\d+)?)",
         text,
