@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 
-def train_seconds(log: Path) -> float | None:
+def wall_seconds(log: Path) -> float | None:
     text = log.read_text(errors="replace")
     portable = re.findall(r"B2Q_ELAPSED_SECONDS:\s*([0-9]+(?:\.[0-9]+)?)", text)
     if portable:
@@ -21,19 +21,30 @@ def train_seconds(log: Path) -> float | None:
     return int(hours or 0) * 3600 + int(minutes) * 60 + float(seconds)
 
 
+def steady_state_train_batch_seconds(log: Path) -> float | None:
+    """Read Lightning's final train-loop throughput before validation begins."""
+    text = log.read_text(errors="replace")
+    train_text = text.split("Validation:", maxsplit=1)[0]
+    rates = re.findall(r"\b200/200\s+\[[^\]]*,\s*([0-9]+(?:\.[0-9]+)?)it/s", train_text)
+    if not rates:
+        return None
+    return 1 / float(rates[-1])
+
+
 def write_benchmark(results: Path, hourly: float) -> None:
     rows = ["# CUDA benchmark and cost projection", "", f"Hourly Pod price: `${hourly:.4f}` USD.", ""]
-    rows += ["| Condition | Wall seconds | Seconds/train batch (200-batch bound) | 300-epoch lower-bound cost |", "|---|---:|---:|---:|"]
+    rows += ["| Condition | Full benchmark wall seconds | Steady-state train seconds/batch | 300-epoch train-only cost |", "|---|---:|---:|---:|"]
     for condition in ("full", "eeg32"):
-        seconds = train_seconds(results / f"benchmark_{condition}.log")
-        if seconds is None:
+        log = results / f"benchmark_{condition}.log"
+        wall = wall_seconds(log)
+        per_batch = steady_state_train_batch_seconds(log)
+        if wall is None or per_batch is None:
             rows.append(f"| {condition} | NOT AVAILABLE | NOT AVAILABLE | NOT AVAILABLE |")
             continue
-        per_batch = seconds / 200
         projected = per_batch * 1832 * 300 / 3600 * hourly
-        rows.append(f"| {condition} | {seconds:.1f} | {per_batch:.4f} | ${projected:.2f} |")
+        rows.append(f"| {condition} | {wall:.1f} | {per_batch:.4f} | ${projected:.2f} |")
     rows.append("")
-    rows.append("Projection excludes validation, test, cache misses, and checkpoints; use it as a lower bound.")
+    rows.append("Cost uses the final Lightning train-loop rate before validation. Full wall time is retained to show startup, validation, test, and checkpoint overhead.")
     (results / "BENCHMARK.md").write_text("\n".join(rows) + "\n")
     (results / "COST_PROJECTION.md").write_text("\n".join(rows) + "\n")
 
