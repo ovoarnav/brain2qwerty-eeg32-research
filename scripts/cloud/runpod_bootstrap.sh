@@ -29,8 +29,6 @@ if ! command -v uv >/dev/null 2>&1; then
 fi
 uv python install 3.12
 uv venv --python 3.12 "$VENV"
-source "$VENV/bin/activate"
-python -m pip install --upgrade pip
-python -m pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 \
+uv pip install --python "$VENV/bin/python" torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 \
   --index-url https://download.pytorch.org/whl/cu124
-python -m pip install -e '.[dev]'
+uv pip install --python "$VENV/bin/python" -e '.[dev]'
