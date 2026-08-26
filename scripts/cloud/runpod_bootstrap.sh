@@ -28,7 +28,7 @@ if ! command -v uv >/dev/null 2>&1; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 uv python install 3.12
-uv venv --python 3.12 "$VENV"
+uv venv --clear --python 3.12 "$VENV"
 uv pip install --python "$VENV/bin/python" torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 \
   --index-url https://download.pytorch.org/whl/cu124
 uv pip install --python "$VENV/bin/python" -e '.[dev]'
