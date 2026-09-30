@@ -1,0 +1,245 @@
+{
+  "status": "PASS",
+  "scope": "synthetic tensor/gradient inspection; not training or EEG accuracy",
+  "candidate_file": "manual_candidate.py",
+  "source_sha256": "fe794dc4efa4949586549e9838a90b4a694026acac1c6b14b1afe46c3a63d633",
+  "parameters": 11309,
+  "module_trace": {
+    "sensor": {
+      "input": [
+        [
+          7,
+          32,
+          4
+        ]
+      ],
+      "output": [
+        7,
+        32,
+        48
+      ]
+    },
+    "adapter": {
+      "input": [
+        [
+          7,
+          48
+        ]
+      ],
+      "output": [
+        7,
+        32
+      ]
+    },
+    "context": {
+      "input": [
+        [
+          4,
+          2,
+          32
+        ]
+      ],
+      "output": [
+        4,
+        2,
+        32
+      ]
+    },
+    "head": {
+      "input": [
+        [
+          7,
+          32
+        ]
+      ],
+      "output": [
+        7,
+        29
+      ]
+    }
+  },
+  "representations": {
+    "local": [
+      7,
+      48
+    ],
+    "contextual": [
+      7,
+      32
+    ],
+    "fused": [
+      7,
+      32
+    ]
+  },
+  "input_gradients": {
+    "signals": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "coordinates": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    }
+  },
+  "parameter_gradients": {
+    "sensor.weight": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "sensor.bias": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "adapter.weight": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "adapter.bias": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.self_attn.in_proj_weight": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.self_attn.in_proj_bias": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.self_attn.out_proj.weight": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.self_attn.out_proj.bias": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.linear1.weight": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.linear1.bias": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.linear2.weight": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.linear2.bias": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.norm1.weight": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.norm1.bias": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.norm2.weight": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "context.layers.0.norm2.bias": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "head.weight": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    },
+    "head.bias": {
+      "present": true,
+      "finite": true,
+      "nonzero": true
+    }
+  },
+  "contracts": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ]
+}

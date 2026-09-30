@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "source_kind": "synthetic",
+  "scope": "untrained proxy shape/interface smoke; no brain-decoding accuracy",
+  "input_shape": [
+    7,
+    32,
+    25
+  ],
+  "coordinates_shape": [
+    7,
+    32,
+    2
+  ],
+  "logits_shape": [
+    7,
+    29
+  ],
+  "representations": {
+    "local": [
+      7,
+      32
+    ],
+    "contextual": [
+      7,
+      32
+    ],
+    "fused": [
+      7,
+      32
+    ]
+  }
+}

@@ -60,6 +60,22 @@ Live outputs are ignored under `results/`. Read the latest `codex_*/DEV_DAY_REPO
 
 `attach-repo` copies and hashes a fixed allowlist of source files without changing the checkout. It does not itself execute sampler methods. `native_smoke.py` separately builds actual V1/neuraltrain classes with reduced configuration, synthetic 32-channel tensors and interleaved sentences; it performs forward/backward, exercises the native sampler, and checks whether native logits restore interleaved input order. Missing dependencies or incompatibility are BLOCKED. On the current source the interleaved-order probe is BLOCKED: native logits stay in sentence-grouped order. The production sampler groups sentences, so this probe does not establish a failure on production batches; it identifies a stricter proxy contract that the native path does not provide. The smoke does not run real-data preprocessing or full training.
 
-Manual route: `lab.py prepare /new/workspace`, edit only its `candidate.py` using Codex, then `lab.py evaluate /new/workspace`. `--context minimal` versus `structured` changes only supplied mathematical context, not evaluation or agent rules. Real-data fixtures, KenLM, GPU support, scientific comparison and porting proxy patches into V1 are outside this implementation.
+Manual route: `lab.py prepare /new/workspace`, edit only its `candidate.py` using Codex, then `lab.py evaluate /new/workspace`. `--context minimal` versus `structured` changes supplied mathematical context and the starting-model inspection report, not evaluation or agent rules. The structured workspace includes `INSPECTION.json` with a source hash, actual module shapes, input/parameter gradients and contracts. It describes the starting candidate; regenerate it after code changes. Actual context ablation, KenLM, GPU support, scientific comparison and porting proxy patches into V1 remain unverified.
+
+## Inspect a candidate and check a local interface fixture
+
+From the harness root, using the small environment:
+
+```bash
+python tools/inspect_candidate.py verification/manual_candidate.py --output results/inspection.json
+python tools/fixture_smoke.py /local/operator-fixture.npz --output results/fixture_smoke.json
+python -m unittest -v test_controller test_tools
+```
+
+The inspector executes trusted candidate code without training, traces top-level module input/output shapes, checks input and parameter gradients, and runs the 16 contracts. The evaluator remains the authority for training and promotion. Neither inspection nor a passing synthetic fixture verifies real EEG performance.
+
+An operator fixture must contain exactly four NPZ arrays: `x` (floating point `[N,C,T]`), `coordinates` (floating point `[N,C,2]` in the same sensor order/frame), `subjects` and `sentences` (anonymous integer `[N]` identity codes). Windows must already be aligned; coordinate normalization and montage selection must already match the real pipeline. Do not include labels, subject names or raw metadata. `allow_pickle=False`, bounded dimensions, finite values and exact alignment are checked. The tool runs an untrained proxy locally and writes shapes/status only, without copying or uploading the fixture. `--source-kind synthetic` explicitly labels a generated developer fixture; the default operator input has unverified provenance. Actual operator EEG fixtures remain unrun.
+
+Read [the Markdown review](verification/MD_REVIEW.md) for what was actionable, completed or blocked, and [the session packet](verification/SESSION_PACKET.md) for the evidence and five discussion questions.
 
 `docs/ORIGINAL_*.md` preserve the uploaded documents as historical references. Their claimed numbers apply to the unavailable original implementation, not this code. Use this README and `verification/BUILD_VERIFICATION.md` for current capabilities and results.

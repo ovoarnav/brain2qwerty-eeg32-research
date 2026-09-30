@@ -2,6 +2,8 @@
 
 See BUILD_VERIFICATION.md for scope, limitations and provenance.
 
+See SESSION_PACKET.md for the demonstration sequence and evidence-based answers to all five uploaded session questions. MD_REVIEW.md records the complete source-document review and remaining prerequisites.
+
 ```json
 {
   "execution_route": "manual active Codex session",

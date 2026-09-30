@@ -26,4 +26,12 @@ Attempted the actual three-round controller using the installed Codex CLI with w
 
 Portable evidence includes baseline/seeded-fault checks, native smoke, manual evaluation, model, representation metadata, patch, and sanitized blocked CLI summary. Raw events/stderr and local source snapshots remain ignored in the cloud workspace. No EEG, environment secrets or virtual environments are included.
 
-Windows/macOS execution, real EEG training, GPU/DirectML/ROCm, KenLM, context ablation, hostile-code isolation, and application deployment were not tested. Cloud configuration draft fields were not saved: their tool is unavailable. The prepared machine and published Git branch are distinct from environment publication.
+## Markdown follow-up tools
+
+Reviewed all 15 source Markdown documents and recorded actions/discrepancies in MD_REVIEW.md. SESSION_PACKET.md answers the five uploaded discussion questions against actual evidence. Implemented a deterministic operator-side inspector with source hashes, module shape traces, signal/coordinate gradients, parameter gradients and existing contracts. Baseline and manual candidate inspection both passed; the width adapter is independently observed rather than trusting math_diff.json.
+
+Implemented the operator-local NPZ interface checker. Explicitly generated synthetic 32- and 61-channel fixtures passed with logits [7,29]. No actual operator EEG fixture was supplied or tested; arrays stay in ignored results/ and are excluded from the ZIP. Misaligned coordinate arrays are rejected. Structured preparation now includes a starting-model INSPECTION.json; minimal preparation omits context and inspection while retaining identical candidate, task and rules.
+
+All 10 controller/tool unit tests passed (five controller, five tools), the 16-contract/seven-fault self-test passed, and Ruff checks/formatting passed for the four changed Python files. After a workspace restart, retried one structured autonomous round; its model connection again returned proxy HTTP CONNECT 403. The scoped invocation was stopped and recorded BLOCKED; no architecture round or actual context ablation completed. See cli_restart_blocked_summary.json.
+
+Windows/macOS execution, actual real-window fixtures, real EEG training, GPU/DirectML/ROCm, KenLM, context ablation, hostile-code isolation, and application deployment were not tested. Cloud configuration draft fields were not saved: their tool is unavailable. The prepared machine and published Git branch are distinct from environment publication.
