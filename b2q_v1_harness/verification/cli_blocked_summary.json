@@ -1,0 +1,31 @@
+{
+  "baseline": {
+    "seeds": [
+      7,
+      17
+    ],
+    "updates_per_seed": 160,
+    "raw_character_error": [
+      0.08196721225976944,
+      0.08196721225976944
+    ],
+    "mean_raw_character_error": 0.08196721225976944,
+    "scope": "synthetic developer smoke; not paper CER or EEG results"
+  },
+  "attempts": [
+    {
+      "round": 1,
+      "attempt": 0,
+      "codex_exit": -15,
+      "evaluation": {
+        "status": "BLOCKED",
+        "error": "Codex exit -15; inspect stderr/events"
+      }
+    }
+  ],
+  "promoted": false,
+  "security": "workspace-write CLI requested; evaluator outside candidate workspace. Not a hardened adversarial security boundary.",
+  "blocker": "Codex exit -15; inspect stderr/events",
+  "network_diagnosis": "Proxy HTTP CONNECT failed with status 403; scoped CLI stopped; no autonomous round completed.",
+  "execution_route": "nested Codex CLI, not the manual active-session experiment"
+}

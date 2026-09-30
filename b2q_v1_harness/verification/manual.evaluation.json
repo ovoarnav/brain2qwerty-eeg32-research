@@ -1,0 +1,97 @@
+{
+  "run_id": "ef74cfe8e05c472fb5ef61cdd483ad5a",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "training": {
+    "seeds": [
+      7,
+      17
+    ],
+    "updates_per_seed": 160,
+    "raw_character_error": [
+      0.1147540956735611,
+      0.09836065769195557
+    ],
+    "mean_raw_character_error": 0.10655737668275833,
+    "scope": "synthetic developer smoke; not paper CER or EEG results"
+  },
+  "representations": {
+    "local": [
+      7,
+      48
+    ],
+    "contextual": [
+      7,
+      32
+    ],
+    "fused": [
+      7,
+      32
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+# Portable Brain2Qwerty V1 developer harness
+
+This is a **new implementation** based on the supplied workflow documents; the original harness code was unavailable. Its outputs replace neither the original build evidence nor real EEG evaluation. It is a synthetic CPU testbed for representation changes, contract enforcement, and a bounded Codex loop. There is no deployment stage.
+
+## Start on your machine
+
+Keep this environment separate from the original V1 environment. Python 3.12+, Git, and an authenticated Codex CLI are prerequisites for agent runs. The self-test needs no Codex or credentials.
+
+Windows PowerShell, from the extracted folder:
+
+```powershell
+.\setup.ps1
+.\.venv-lab\Scripts\python.exe lab.py attach-repo "C:\path\to\brain2qwerty-eeg32-research"
+.\.venv-lab\Scripts\python.exe lab.py agent --rounds 3
+```
+
+Linux/macOS:
+
+```bash
+bash setup.sh
+.venv-lab/bin/python lab.py attach-repo /path/to/brain2qwerty-eeg32-research
+.venv-lab/bin/python lab.py agent --rounds 3
+```
+
+Codex runs through your existing authenticated connection, not a model on the CPU. Install/sign in through official Codex setup if required. A run consumes your Codex allowance. `--model` optionally selects a model available in your installation. The harness invokes Codex with `--sandbox workspace-write`; do not rerun with sandbox bypass if permissions fail. Preserve errors in the report.
+
+## This prepared cloud workspace
+
+The repository is `/workspace/brain2qwerty-eeg32-research`. The small environment is `/workspace/venvs/b2q-harness`:
+
+```bash
+cd /workspace/brain2qwerty-eeg32-research/b2q_v1_harness
+/workspace/venvs/b2q-harness/bin/python lab.py doctor
+/workspace/venvs/b2q-harness/bin/python lab.py selftest
+/workspace/venvs/b2q-harness/bin/python lab.py agent --rounds 3
+```
+
+The original V1 environment is `/workspace/venvs/brain2qwerty`. For native validation:
+
+```bash
+source /workspace/setup/brain2qwerty/activate.sh
+python b2q_v1_harness/tools/native_smoke.py --repo "$PWD" --output b2q_v1_harness/results/native_smoke.json
+```
+
+The cloud task executes remotely while your laptop is closed. Sending new instructions and inspecting remote results requires internet access. No scheduled job or always-running service is installed: start a Codex cloud task to do more work. The repository branch and downloadable ZIP preserve portable code; local virtual environments and credentials are excluded. Cloud configuration publication remains a product action, not something this harness implements.
+
+## What is enforced
+
+`selftest` runs 16 contracts and seven explicitly seeded faults, plus three controller failure regressions. Contracts check logits, input variants, single-row operation, sentence/subject identity, padding, row order, sensor-coordinate permutation, coordinate and sensor dependence, label independence, gradients, checkpoint loading, representation metadata, parameter budget and evaluation repeatability. Some checks share a fixture and assertion; the number is not a coverage score. Seeded faults are not agent mistakes.
+
+`agent` starts at most three rounds, with one repair per round, two CPU threads, a 600-second timeout per invocation and a 2400-second loop budget. Evaluation is an external subprocess; nonzero exits, missing/stale output and training exceptions cannot become PASS. Training has a 500,000-parameter gate and 160 updates each on seeds 7 and 17. It compares synthetic held-out character mismatch on a fixed 61-character fixture. A candidate must pass contracts and strictly improve the incumbent mean to be promoted. This reused developer fixture is not a scientific validation set. `--token-budget` defaults to 100000 reported input/output tokens, checked between calls; missing usage events are not evidence of zero actual usage. It is not an inside-call or dollar cap. No OS memory cap is implemented. POSIX timeouts kill the invocation's process group; Windows cleanup is limited to the direct process.
+
+Each candidate workspace gets only the model and agent instructions. The operator evaluator stays outside it. **This is an operational separation, not a hardened hostile-code sandbox**: candidate Python executes with the operator's user permissions, and host Codex sandbox behavior must be verified separately. Use only trusted generated code. No raw EEG or credentials should enter candidate workspaces. A nonzero Codex exit is reported as BLOCKED, without a scripted replacement.
+
+## Inspect and move results
+
+Live outputs are ignored under `results/`. Read the latest `codex_*/DEV_DAY_REPORT.md`, attempt evaluation JSON, patch, candidate `math_diff.json`, and raw events. Review raw events and stderr for privacy before sharing. Portable validation evidence checked into `verification/` excludes raw agent events and local source snapshots.
+
+`attach-repo` copies and hashes a fixed allowlist of source files without changing the checkout. It does not itself execute sampler methods. `native_smoke.py` separately builds actual V1/neuraltrain classes with reduced configuration, synthetic 32-channel tensors and interleaved sentences; it performs forward/backward, exercises the native sampler, and checks whether native logits restore interleaved input order. Missing dependencies or incompatibility are BLOCKED. On the current source the interleaved-order probe is BLOCKED: native logits stay in sentence-grouped order. The production sampler groups sentences, so this probe does not establish a failure on production batches; it identifies a stricter proxy contract that the native path does not provide. The smoke does not run real-data preprocessing or full training.
+
+Manual route: `lab.py prepare /new/workspace`, edit only its `candidate.py` using Codex, then `lab.py evaluate /new/workspace`. `--context minimal` versus `structured` changes only supplied mathematical context, not evaluation or agent rules. Real-data fixtures, KenLM, GPU support, scientific comparison and porting proxy patches into V1 are outside this implementation.
+
+`docs/ORIGINAL_*.md` preserve the uploaded documents as historical references. Their claimed numbers apply to the unavailable original implementation, not this code. Use this README and `verification/BUILD_VERIFICATION.md` for current capabilities and results.

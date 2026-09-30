@@ -1,0 +1,26 @@
+diff --git a/candidate.py b/candidate.py
+index 19e98e2..46d17ae 100644
+--- a/candidate.py
++++ b/candidate.py
+@@ -7 +7 @@ class Model(nn.Module):
+-    def __init__(self, width=32, fault=None):
++    def __init__(self, width=48, fault=None):
+@@ -10,0 +11 @@ class Model(nn.Module):
++        self.adapter = nn.Linear(width, 32)
+@@ -12 +13 @@ class Model(nn.Module):
+-            nn.TransformerEncoderLayer(width, 4, width * 2, dropout=0, batch_first=True),
++            nn.TransformerEncoderLayer(32, 4, 64, dropout=0, batch_first=True),
+@@ -15 +16 @@ class Model(nn.Module):
+-        self.head = nn.Linear(width, 29)
++        self.head = nn.Linear(32, 29)
+@@ -26,0 +28 @@ class Model(nn.Module):
++        projected = self.adapter(local)
+@@ -33 +35 @@ class Model(nn.Module):
+-        padded = local.new_zeros(len(groups), length, local.shape[-1])
++        padded = projected.new_zeros(len(groups), length, projected.shape[-1])
+@@ -36 +38 @@ class Model(nn.Module):
+-            padded[g, :len(indices)] = local[indices]
++            padded[g, :len(indices)] = projected[indices]
+@@ -43 +45 @@ class Model(nn.Module):
+-        fused = contextual + local
++        fused = contextual + projected

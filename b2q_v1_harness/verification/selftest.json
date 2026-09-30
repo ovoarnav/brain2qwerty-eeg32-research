@@ -1,0 +1,573 @@
+{
+  "status": "PASS",
+  "baseline": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "fault_injections": {
+    "wrong_output_shape": [
+      {
+        "name": "finite_one_logit_row_per_keystroke",
+        "status": "FAIL",
+        "error": "AssertionError: "
+      },
+      {
+        "name": "channel_and_window_shape_variants",
+        "status": "FAIL",
+        "error": "AssertionError: "
+      },
+      {
+        "name": "single_keystroke",
+        "status": "FAIL",
+        "error": "AssertionError: Scalars are not equal!\n\nExpected 1 but got 0.\nAbsolute difference: 1\nRelative difference: 1.0\n\nThe failure occurred for item [0]"
+      },
+      {
+        "name": "sentence_isolation",
+        "status": "FAIL",
+        "error": "AssertionError: The values for attribute 'shape' do not match: torch.Size([2, 29]) != torch.Size([1, 29])."
+      },
+      {
+        "name": "ragged_padding_invariance",
+        "status": "FAIL",
+        "error": "AssertionError: The values for attribute 'shape' do not match: torch.Size([2, 29]) != torch.Size([1, 29])."
+      },
+      {
+        "name": "subject_sentence_composite_identity",
+        "status": "FAIL",
+        "error": "AssertionError: The values for attribute 'shape' do not match: torch.Size([2, 29]) != torch.Size([1, 29])."
+      },
+      {
+        "name": "interleaved_rows_restore_original_order",
+        "status": "FAIL",
+        "error": "IndexError: index 6 is out of bounds for dimension 0 with size 6"
+      },
+      {
+        "name": "joint_sensor_coordinate_permutation",
+        "status": "PASS"
+      },
+      {
+        "name": "coordinate_path_has_effect",
+        "status": "PASS"
+      },
+      {
+        "name": "label_canary_independence",
+        "status": "PASS"
+      },
+      {
+        "name": "upstream_gradient_connectivity",
+        "status": "FAIL",
+        "error": "ValueError: Expected input batch_size (6) to match target batch_size (7)."
+      },
+      {
+        "name": "checkpoint_roundtrip",
+        "status": "PASS"
+      },
+      {
+        "name": "declared_representation_shapes",
+        "status": "PASS"
+      },
+      {
+        "name": "parameter_budget",
+        "status": "PASS"
+      },
+      {
+        "name": "repeatable_eval",
+        "status": "PASS"
+      },
+      {
+        "name": "sensor_path_has_effect",
+        "status": "PASS"
+      }
+    ],
+    "detached_upstream": [
+      {
+        "name": "finite_one_logit_row_per_keystroke",
+        "status": "PASS"
+      },
+      {
+        "name": "channel_and_window_shape_variants",
+        "status": "PASS"
+      },
+      {
+        "name": "single_keystroke",
+        "status": "PASS"
+      },
+      {
+        "name": "sentence_isolation",
+        "status": "PASS"
+      },
+      {
+        "name": "ragged_padding_invariance",
+        "status": "PASS"
+      },
+      {
+        "name": "subject_sentence_composite_identity",
+        "status": "PASS"
+      },
+      {
+        "name": "interleaved_rows_restore_original_order",
+        "status": "PASS"
+      },
+      {
+        "name": "joint_sensor_coordinate_permutation",
+        "status": "PASS"
+      },
+      {
+        "name": "coordinate_path_has_effect",
+        "status": "PASS"
+      },
+      {
+        "name": "label_canary_independence",
+        "status": "PASS"
+      },
+      {
+        "name": "upstream_gradient_connectivity",
+        "status": "FAIL",
+        "error": "AssertionError: "
+      },
+      {
+        "name": "checkpoint_roundtrip",
+        "status": "PASS"
+      },
+      {
+        "name": "declared_representation_shapes",
+        "status": "PASS"
+      },
+      {
+        "name": "parameter_budget",
+        "status": "PASS"
+      },
+      {
+        "name": "repeatable_eval",
+        "status": "PASS"
+      },
+      {
+        "name": "sensor_path_has_effect",
+        "status": "PASS"
+      }
+    ],
+    "padding_mask_removed": [
+      {
+        "name": "finite_one_logit_row_per_keystroke",
+        "status": "PASS"
+      },
+      {
+        "name": "channel_and_window_shape_variants",
+        "status": "PASS"
+      },
+      {
+        "name": "single_keystroke",
+        "status": "PASS"
+      },
+      {
+        "name": "sentence_isolation",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 29 / 29 (100.0%)\nGreatest absolute difference: 0.18096762895584106 at index (0, 3) (up to 1e-05 allowed)\nGreatest relative difference: 1.4782335758209229 at index (0, 9) (up to 1e-05 allowed)"
+      },
+      {
+        "name": "ragged_padding_invariance",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 29 / 29 (100.0%)\nGreatest absolute difference: 0.18096762895584106 at index (0, 3) (up to 1e-05 allowed)\nGreatest relative difference: 1.4782335758209229 at index (0, 9) (up to 1e-05 allowed)"
+      },
+      {
+        "name": "subject_sentence_composite_identity",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 29 / 29 (100.0%)\nGreatest absolute difference: 0.18096762895584106 at index (0, 3) (up to 1e-05 allowed)\nGreatest relative difference: 1.4782335758209229 at index (0, 9) (up to 1e-05 allowed)"
+      },
+      {
+        "name": "interleaved_rows_restore_original_order",
+        "status": "PASS"
+      },
+      {
+        "name": "joint_sensor_coordinate_permutation",
+        "status": "PASS"
+      },
+      {
+        "name": "coordinate_path_has_effect",
+        "status": "PASS"
+      },
+      {
+        "name": "label_canary_independence",
+        "status": "PASS"
+      },
+      {
+        "name": "upstream_gradient_connectivity",
+        "status": "PASS"
+      },
+      {
+        "name": "checkpoint_roundtrip",
+        "status": "PASS"
+      },
+      {
+        "name": "declared_representation_shapes",
+        "status": "PASS"
+      },
+      {
+        "name": "parameter_budget",
+        "status": "PASS"
+      },
+      {
+        "name": "repeatable_eval",
+        "status": "PASS"
+      },
+      {
+        "name": "sensor_path_has_effect",
+        "status": "PASS"
+      }
+    ],
+    "cross_sentence_mix": [
+      {
+        "name": "finite_one_logit_row_per_keystroke",
+        "status": "PASS"
+      },
+      {
+        "name": "channel_and_window_shape_variants",
+        "status": "PASS"
+      },
+      {
+        "name": "single_keystroke",
+        "status": "PASS"
+      },
+      {
+        "name": "sentence_isolation",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 58 / 58 (100.0%)\nGreatest absolute difference: 0.012867987155914307 at index (0, 3) (up to 1e-05 allowed)\nGreatest relative difference: 0.2466248869895935 at index (0, 5) (up to 1e-05 allowed)"
+      },
+      {
+        "name": "ragged_padding_invariance",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 58 / 58 (100.0%)\nGreatest absolute difference: 0.012867987155914307 at index (0, 3) (up to 1e-05 allowed)\nGreatest relative difference: 0.2466248869895935 at index (0, 5) (up to 1e-05 allowed)"
+      },
+      {
+        "name": "subject_sentence_composite_identity",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 58 / 58 (100.0%)\nGreatest absolute difference: 0.012867987155914307 at index (0, 3) (up to 1e-05 allowed)\nGreatest relative difference: 0.2466248869895935 at index (0, 5) (up to 1e-05 allowed)"
+      },
+      {
+        "name": "interleaved_rows_restore_original_order",
+        "status": "PASS"
+      },
+      {
+        "name": "joint_sensor_coordinate_permutation",
+        "status": "PASS"
+      },
+      {
+        "name": "coordinate_path_has_effect",
+        "status": "PASS"
+      },
+      {
+        "name": "label_canary_independence",
+        "status": "PASS"
+      },
+      {
+        "name": "upstream_gradient_connectivity",
+        "status": "PASS"
+      },
+      {
+        "name": "checkpoint_roundtrip",
+        "status": "PASS"
+      },
+      {
+        "name": "declared_representation_shapes",
+        "status": "PASS"
+      },
+      {
+        "name": "parameter_budget",
+        "status": "PASS"
+      },
+      {
+        "name": "repeatable_eval",
+        "status": "PASS"
+      },
+      {
+        "name": "sensor_path_has_effect",
+        "status": "PASS"
+      }
+    ],
+    "row_order_lost": [
+      {
+        "name": "finite_one_logit_row_per_keystroke",
+        "status": "PASS"
+      },
+      {
+        "name": "channel_and_window_shape_variants",
+        "status": "PASS"
+      },
+      {
+        "name": "single_keystroke",
+        "status": "PASS"
+      },
+      {
+        "name": "sentence_isolation",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 58 / 58 (100.0%)\nGreatest absolute difference: 0.04174145311117172 at index (1, 2) (up to 1e-05 allowed)\nGreatest relative difference: 1.3418152332305908 at index (1, 2) (up to 1e-05 allowed)"
+      },
+      {
+        "name": "ragged_padding_invariance",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 58 / 58 (100.0%)\nGreatest absolute difference: 0.04174145311117172 at index (1, 2) (up to 1e-05 allowed)\nGreatest relative difference: 1.3418152332305908 at index (1, 2) (up to 1e-05 allowed)"
+      },
+      {
+        "name": "subject_sentence_composite_identity",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 58 / 58 (100.0%)\nGreatest absolute difference: 0.04174145311117172 at index (1, 2) (up to 1e-05 allowed)\nGreatest relative difference: 1.3418152332305908 at index (1, 2) (up to 1e-05 allowed)"
+      },
+      {
+        "name": "interleaved_rows_restore_original_order",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 145 / 203 (71.4%)\nGreatest absolute difference: 0.05681300163269043 at index (5, 17) (up to 1e-05 allowed)\nGreatest relative difference: 3.13775634765625 at index (4, 7) (up to 1e-05 allowed)"
+      },
+      {
+        "name": "joint_sensor_coordinate_permutation",
+        "status": "PASS"
+      },
+      {
+        "name": "coordinate_path_has_effect",
+        "status": "PASS"
+      },
+      {
+        "name": "label_canary_independence",
+        "status": "PASS"
+      },
+      {
+        "name": "upstream_gradient_connectivity",
+        "status": "PASS"
+      },
+      {
+        "name": "checkpoint_roundtrip",
+        "status": "PASS"
+      },
+      {
+        "name": "declared_representation_shapes",
+        "status": "PASS"
+      },
+      {
+        "name": "parameter_budget",
+        "status": "PASS"
+      },
+      {
+        "name": "repeatable_eval",
+        "status": "PASS"
+      },
+      {
+        "name": "sensor_path_has_effect",
+        "status": "PASS"
+      }
+    ],
+    "label_leak": [
+      {
+        "name": "finite_one_logit_row_per_keystroke",
+        "status": "PASS"
+      },
+      {
+        "name": "channel_and_window_shape_variants",
+        "status": "PASS"
+      },
+      {
+        "name": "single_keystroke",
+        "status": "PASS"
+      },
+      {
+        "name": "sentence_isolation",
+        "status": "PASS"
+      },
+      {
+        "name": "ragged_padding_invariance",
+        "status": "PASS"
+      },
+      {
+        "name": "subject_sentence_composite_identity",
+        "status": "PASS"
+      },
+      {
+        "name": "interleaved_rows_restore_original_order",
+        "status": "PASS"
+      },
+      {
+        "name": "joint_sensor_coordinate_permutation",
+        "status": "PASS"
+      },
+      {
+        "name": "coordinate_path_has_effect",
+        "status": "PASS"
+      },
+      {
+        "name": "label_canary_independence",
+        "status": "FAIL",
+        "error": "AssertionError: Tensor-likes are not close!\n\nMismatched elements: 14 / 203 (6.9%)\nGreatest absolute difference: 10.0 at index (0, 0) (up to 1e-05 allowed)\nGreatest relative difference: 451.2220153808594 at index (5, 5) (up to 1.3e-06 allowed)"
+      },
+      {
+        "name": "upstream_gradient_connectivity",
+        "status": "PASS"
+      },
+      {
+        "name": "checkpoint_roundtrip",
+        "status": "PASS"
+      },
+      {
+        "name": "declared_representation_shapes",
+        "status": "PASS"
+      },
+      {
+        "name": "parameter_budget",
+        "status": "PASS"
+      },
+      {
+        "name": "repeatable_eval",
+        "status": "PASS"
+      },
+      {
+        "name": "sensor_path_has_effect",
+        "status": "PASS"
+      }
+    ],
+    "width_mismatch": [
+      {
+        "name": "finite_one_logit_row_per_keystroke",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "channel_and_window_shape_variants",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "single_keystroke",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x31 and 32x29)"
+      },
+      {
+        "name": "sentence_isolation",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "ragged_padding_invariance",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "subject_sentence_composite_identity",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "interleaved_rows_restore_original_order",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "joint_sensor_coordinate_permutation",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "coordinate_path_has_effect",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "label_canary_independence",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "upstream_gradient_connectivity",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "checkpoint_roundtrip",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "declared_representation_shapes",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "parameter_budget",
+        "status": "PASS"
+      },
+      {
+        "name": "repeatable_eval",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      },
+      {
+        "name": "sensor_path_has_effect",
+        "status": "FAIL",
+        "error": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (7x31 and 32x29)"
+      }
+    ]
+  },
+  "controller_regressions": {
+    "stale_output_rejected": true,
+    "unsuccessful_exit_rejected": true,
+    "training_exception_rejected": true
+  }
+}

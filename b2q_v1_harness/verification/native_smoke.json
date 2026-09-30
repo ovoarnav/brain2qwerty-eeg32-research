@@ -1,0 +1,24 @@
+{
+  "status": "BLOCKED",
+  "scope": "real V1 classes, reduced configuration, synthetic CPU; not reproduction",
+  "embeddings_shape": [
+    4,
+    32
+  ],
+  "logits_shape": [
+    4,
+    29
+  ],
+  "loss": 3.724668502807617,
+  "finite_gradients": true,
+  "torch": "2.6.0+cu124",
+  "sampler_order": [
+    0,
+    2,
+    1,
+    3
+  ],
+  "interleaved_row_order_preserved": false,
+  "grouped_order_matches": true,
+  "error": "Native V1 transformer emits sentence-grouped rows without restoring original interleaved row order. Forward/backward succeeded; this is a source fidelity limitation, not a dependency failure."
+}
