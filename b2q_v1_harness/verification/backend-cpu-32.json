@@ -1,0 +1,58 @@
+{
+  "status": "pass",
+  "backend": "cpu",
+  "device": "cpu",
+  "python": "3.12.14",
+  "torch": "2.6.0+cu124",
+  "torch_hip": null,
+  "channels": 32,
+  "time_points": 25,
+  "architecture": {
+    "encoder": {
+      "name": "SimpleConvTimeAgg",
+      "time_agg_out": "att",
+      "dropout_input": 0.2,
+      "conv_dropout": 0.5,
+      "hidden": 2048,
+      "batch_norm": true,
+      "depth": 8,
+      "dilation_period": 3,
+      "kernel_size": 3,
+      "relu_leakiness": 0.01,
+      "initial_linear": 512,
+      "gelu": true,
+      "skip": true,
+      "scale": 0.1,
+      "subject_layers_config": {},
+      "merger_config": {
+        "n_virtual_channels": 270,
+        "fourier_emb_config": {
+          "n_freqs": null,
+          "total_dim": 2048,
+          "n_dims": 2
+        },
+        "dropout": 0.2,
+        "usage_penalty": 1.0,
+        "per_subject": true,
+        "embed_ref": false
+      }
+    },
+    "transformer": {
+      "name": "TransformerEncoder",
+      "alibi_pos_bias": true,
+      "depth": 4,
+      "heads": 2
+    }
+  },
+  "parameters": 623548457,
+  "logits_shape": [
+    1,
+    29
+  ],
+  "loss": 4.20006799697876,
+  "backward": true,
+  "finite_gradients": true,
+  "optimizer_step": true,
+  "optimizer_seconds": 7.2333712420000325,
+  "elapsed_seconds": 17.44810897499997
+}

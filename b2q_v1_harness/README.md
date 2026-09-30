@@ -42,6 +42,8 @@ source /workspace/setup/brain2qwerty/activate.sh
 python b2q_v1_harness/tools/native_smoke.py --repo "$PWD" --output b2q_v1_harness/results/native_smoke.json
 ```
 
+On another compatible Linux cloud machine with Python 3.12, uv, GCC/G++ and writable `/workspace`, reproduce the original pinned environment with `bash b2q_v1_harness/tools/setup_native_cloud.sh` from the full repository checkout. This installs the full lock including CUDA wheels and KenLM, using a build-only CMake constraint. NeuralSet also needs its hardcoded home cache directory provisioned; the script creates it and may require filesystem permission on a restricted machine. The portable small harness can instead use `setup.sh` without the native stack.
+
 The cloud task executes remotely while your laptop is closed. Sending new instructions and inspecting remote results requires internet access. No scheduled job or always-running service is installed: start a Codex cloud task to do more work. The repository branch and downloadable ZIP preserve portable code; local virtual environments and credentials are excluded. Cloud configuration publication remains a product action, not something this harness implements.
 
 ## What is enforced
