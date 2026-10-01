@@ -1,0 +1,35 @@
+{
+  "historical_facts_source": "user-provided checkpoint recovery findings, October 1, 2026",
+  "checkpoint": {
+    "path_on_original_pod": "/workspace/results/eeg32/best.ckpt",
+    "reported_bytes": 7482838260,
+    "sha256": null,
+    "present_in_current_cloud_workspace": false
+  },
+  "runpod": {
+    "pod_id": "0tbm05ey3w1xpc",
+    "pod_name": "b2q-eeg32-h100-fast",
+    "region": "US-NE-1",
+    "last_observed_date": "2026-08-30",
+    "reported_current_pod_response": 404,
+    "reported_account_pods": 0,
+    "reported_account_network_volumes": 0,
+    "reported_storage_kind": "pod-local persistent storage, not a detachable network volume",
+    "independently_requeried_in_this_cloud_session": false
+  },
+  "original_local_evidence_paths": [
+    "C:/Users/ArnavNambiar/Documents/Codex/2026-08-25/run/outputs/checkpoint_recovery/RECOVERY_FINDINGS.md",
+    "C:/Users/ArnavNambiar/Documents/Codex/2026-08-25/run/outputs/checkpoint_recovery/RECOVERED_HANDOFF_REPORT.md"
+  ],
+  "original_local_evidence_read_in_this_cloud_session": false,
+  "current_cloud_access": {
+    "runpod_api_key_binding_present": false,
+    "original_runpod_volume_mounted": false,
+    "guidance_url": "https://docs.runpod.io/pods/troubleshooting/zero-gpus",
+    "guidance_fetch_result": "proxy CONNECT 403; live guidance not retrieved"
+  },
+  "remaining_non_retraining_route": "RunPod support investigation of retained original storage or backups; availability unknown",
+  "support_request_sent": false,
+  "new_paid_infrastructure_started": false,
+  "retraining_started": false
+}
