@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "scope": "actual full Brain2Qwerty V1 EEG32 CPU pass; no proxy or architecture reduction",
+  "backend": "cpu",
+  "torch": "2.6.0+cu124",
+  "threads": 2,
+  "architecture": {
+    "encoder": {
+      "name": "SimpleConvTimeAgg",
+      "time_agg_out": "att",
+      "dropout_input": 0.2,
+      "conv_dropout": 0.5,
+      "hidden": 2048,
+      "batch_norm": true,
+      "depth": 8,
+      "dilation_period": 3,
+      "kernel_size": 3,
+      "relu_leakiness": 0.01,
+      "initial_linear": 512,
+      "gelu": true,
+      "skip": true,
+      "scale": 0.1,
+      "subject_layers_config": {},
+      "merger_config": {
+        "n_virtual_channels": 270,
+        "fourier_emb_config": {
+          "n_freqs": null,
+          "total_dim": 2048,
+          "n_dims": 2
+        },
+        "dropout": 0.2,
+        "usage_penalty": 1.0,
+        "per_subject": true,
+        "embed_ref": false
+      }
+    },
+    "transformer": {
+      "name": "TransformerEncoder",
+      "alibi_pos_bias": true,
+      "depth": 4,
+      "heads": 2
+    }
+  },
+  "weights": {
+    "kind": "explicit-untrained-native-V1",
+    "checkpoint_loaded": false
+  },
+  "input_kind": "synthetic-noise",
+  "input_shape": [
+    2,
+    32,
+    25
+  ],
+  "position_shape": [
+    2,
+    32,
+    2
+  ],
+  "sentence_groups": 1,
+  "grouped_input_indices": [
+    0,
+    1
+  ],
+  "input_sha256": "58a435c202882ae95c2fa87c0d89836433c17b700f10c329d72e914670164bb1",
+  "montage_names_verified": true,
+  "parameters": 623548457,
+  "embedding_shape": [
+    2,
+    2048
+  ],
+  "logits_shape": [
+    2,
+    29
+  ],
+  "finite_embeddings_and_logits": true,
+  "original_row_order_restored": true,
+  "model_in_eval_mode": true,
+  "load_and_setup_seconds": 3.387055263010552,
+  "forward_seconds": 0.3968716000090353,
+  "gradients": {
+    "status": "PASS",
+    "all_present_parameter_gradients_finite": true,
+    "stages": {
+      "model.merger": {
+        "parameters_with_gradient": 1,
+        "finite": true,
+        "nonzero": true
+      },
+      "model.initial_linear": {
+        "parameters_with_gradient": 2,
+        "finite": true,
+        "nonzero": true
+      },
+      "model.encoder": {
+        "parameters_with_gradient": 38,
+        "finite": true,
+        "nonzero": true
+      },
+      "model.time_agg_out": {
+        "parameters_with_gradient": 4,
+        "finite": true,
+        "nonzero": true
+      },
+      "transformer": {
+        "parameters_with_gradient": 49,
+        "finite": true,
+        "nonzero": true
+      },
+      "linear": {
+        "parameters_with_gradient": 2,
+        "finite": true,
+        "nonzero": true
+      }
+    },
+    "inputs": {
+      "neuro": {
+        "present": true,
+        "finite": true,
+        "nonzero": true
+      },
+      "channel_positions": {
+        "present": true,
+        "finite": true,
+        "nonzero": true
+      }
+    },
+    "objective": "mean_squared_logits_connectivity_probe",
+    "objective_value": 0.30112147331237793,
+    "backward_seconds": 0.9672413219959708
+  },
+  "batch_metrics": null,
+  "peak_rss_mib": 6807.83203125,
+  "elapsed_seconds": 7.127219729009084
+}

@@ -2,6 +2,12 @@
 
 This is a newly generated harness, not the unavailable kit described in the uploaded historical documents.
 
+## Full native CPU/checkpoint workflow
+
+Added `tools/native_cpu_pass.py`, which uses the unchanged full native V1 architecture and exact EEG32 montage in the original pinned environment. A two-window CPU forward produced `[2,2048]` embeddings and `[2,29]` logits in about 0.40 seconds; an upstream backward probe passed across native stages. A generated **untrained** full 2.49 GB state_dict was strictly reloaded on CPU and reproduced outputs exactly. The project suite now passes 26 tests, including eight checkpoint/input/order regressions. See [NATIVE_CPU_REPORT.md](NATIVE_CPU_REPORT.md) for evidence and scope.
+
+The prior RunPod branch was fetched and inspected. Its scripts write GPU checkpoints outside Git under `/workspace/results/eeg32`; that volume is not mounted in this machine. The user's trained checkpoint has not been loaded. Default discovery correctly returns BLOCKED rather than substituting random weights. Native CPU capability is verified; trained-model evaluation remains waiting for that artifact.
+
 ## Embedding experiments completed October 1, 2026
 
 The [embedding report](embedding_comparison/REPORT.md) supersedes the earlier single-candidate experiment as evidence about embedding changes. Ran 10 variants × five seeds × two protocols = 100 completed fits, 16,000 fixed-budget AdamW updates. All variants passed the 16 contracts in both protocols. The larger balanced protocol uses independent shuffled 232/116/232 synthetic train/validation/test examples; the legacy protocol uses 61-character noise replicas. Context/head architecture and initialization are matched for each seed, context/fused widths stay 32, and validation selection is recorded before test evaluation.

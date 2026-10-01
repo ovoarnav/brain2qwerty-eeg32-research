@@ -1,8 +1,35 @@
 # Portable Brain2Qwerty V1 developer harness
 
-This is a **new implementation** based on the supplied workflow documents; the original harness code was unavailable. Its outputs replace neither the original build evidence nor real EEG evaluation. It is a synthetic CPU testbed for representation changes, contract enforcement, and a bounded Codex loop. There is no deployment stage.
+This is a **new implementation** based on the supplied workflow documents; the original harness code was unavailable. It includes a full native Brain2Qwerty V1 CPU/checkpoint runner and a separate synthetic proxy for contract development. Proxy embedding results do not measure Brain2Qwerty decoding performance. There is no deployment stage.
 
-## Embedding comparison: actual experiment results
+## Run the actual full EEG32 Brain2Qwerty V1 on CPU
+
+Use the original pinned V1 environment, `/workspace/venvs/brain2qwerty`, rather than the small proxy environment. The new runner builds the unchanged 623,548,457-parameter Conv + temporal-attention + sentence-transformer model. It maps supplied checkpoint tensors onto CPU, loads the state strictly, and does not restore the training optimizer or retrain the model.
+
+```bash
+cd /workspace/brain2qwerty-eeg32-research
+# Your own trusted GPU-trained Lightning checkpoint; no recordings needed for a shape pass.
+/workspace/venvs/brain2qwerty/bin/python b2q_v1_harness/tools/native_cpu_pass.py \
+  --checkpoint /path/to/eeg32/best.ckpt --trusted-checkpoint
+
+# Add a local native EEG batch to examine predictions on recorded inputs.
+/workspace/venvs/brain2qwerty/bin/python b2q_v1_harness/tools/native_cpu_pass.py \
+  --checkpoint /path/to/eeg32/best.ckpt --trusted-checkpoint \
+  --fixture /path/to/eeg32_dataset_gate.npz --split test \
+  --predictions b2q_v1_harness/results/native_predictions.npz
+
+# Explicit architecture-only execution and upstream-gradient check.
+/workspace/venvs/brain2qwerty/bin/python b2q_v1_harness/tools/native_cpu_pass.py \
+  --untrained --backward
+```
+
+Without `--checkpoint` or `--untrained`, the runner searches the RunPod checkpoint locations `/workspace/results/eeg32/best*.ckpt` and `/workspace/results/brain2qwerty/eeg32/best*.ckpt`. A missing/ambiguous checkpoint is BLOCKED; it never substitutes random weights automatically. `--trusted-checkpoint` is for your own Lightning files containing pickled optimizer/metric configuration; a tensor-only state_dict uses the default restricted loader. The current cloud machine does not mount your original RunPod volume.
+
+An optional NPZ accepts `neuro [N,32,25]`, `channel_positions [N,32,2]`, `subject_id [N]` or `[N,1]`, and `sentence_uids [N]`; optional `feature [N]` or `[N,1]` provides batch-only loss/mismatch, and optional `channel_names [32]` verifies the exact ordered EEG32 montage. Windows, coordinate frame and subject-index mapping must match the training pipeline. The existing `experiments/b2q_v1_eeg32_amd/dataset_gate.py` NPZ format is accepted directly with `--split`. Interleaved rows are grouped before the native forward and predictions are restored to their original row order; original native source is unchanged.
+
+The [native CPU report](verification/NATIVE_CPU_REPORT.md) records a successful full-size CPU forward/backward and checkpoint roundtrip. These used generated noise and explicitly untrained weights. Your GPU checkpoint remains a separate missing artifact, not a failed CPU capability. The [RunPod branch](https://github.com/ovoarnav/brain2qwerty-eeg32-research/tree/experiment/b2q-v1-eeg32-runpod) documents the training paths and keeps checkpoints outside Git.
+
+## Proxy embedding comparison
 
 The full [embedding comparison report](verification/embedding_comparison/REPORT.md) covers 10 local-embedding variants, five matched seeds, two protocols and 100 completed training runs. On the balanced synthetic split, baseline test mismatch was 31.21%; 48-wide linear projection reached 20.00%; the validation-selected nonlinear 48-wide projection reached 19.48%. The original small fixture ranked variants differently. Read the controls, per-seed variation, projection-only control and embedding-rank measurements before drawing conclusions. These are synthetic results, not real EEG accuracy.
 

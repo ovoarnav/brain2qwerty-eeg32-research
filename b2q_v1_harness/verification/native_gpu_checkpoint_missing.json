@@ -1,0 +1,6 @@
+{
+  "status": "BLOCKED",
+  "scope": "native V1 CPU pass did not complete",
+  "checkpoint_pass_completed": false,
+  "error": "FileNotFoundError: Found 0 native best checkpoints; specify --checkpoint PATH. The RunPod volume is not automatically mounted here."
+}
