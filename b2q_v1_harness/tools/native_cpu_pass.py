@@ -141,7 +141,9 @@ def read_fixture(path, split="test"):
             required = {"neuro", "channel_positions", "subject_id", "sentence_uids"}
             if not required.issubset(data.files):
                 raise ValueError(f"Native fixture requires {sorted(required)}")
-            names = required | ({"feature", "channel_names"} & set(data.files))
+            names = required | (
+                {"feature", "channel_names", "native_untrained_only"} & set(data.files)
+            )
             return {name: data[name].copy() for name in names}
         # Consume the existing real-data dataset_gate.py output without changing it.
         prefix = f"{split}_"
@@ -161,7 +163,18 @@ def read_fixture(path, split="test"):
         )
         if prefix + "feature" in data:
             arrays["feature"] = data[prefix + "feature"].copy()
-        return arrays
+    return arrays
+
+
+def validate_weight_mode(arrays, untrained):
+    if "native_untrained_only" in arrays:
+        marker = arrays["native_untrained_only"]
+        if marker.shape != () or marker.dtype.kind != "b":
+            raise ValueError("native_untrained_only must be a scalar boolean")
+        if bool(marker) and not untrained:
+            raise ValueError(
+                "This recorded-input bridge lacks the trained preprocessing/subject mapping; it is restricted to --untrained"
+            )
 
 
 def prepare_batch(arrays, max_rows=64):
@@ -321,6 +334,7 @@ def run(args):
         if args.fixture
         else synthetic_arrays(args.rows)
     )
+    validate_weight_mode(arrays, args.untrained)
     batch, inverse, labels, info = prepare_batch(arrays, max_rows=args.max_rows)
     print("[native_cpu_pass] build full native V1 / load checkpoint", flush=True)
     if args.untrained:
@@ -457,6 +471,9 @@ def run(args):
         "native_source_sha256": source_hashes,
         "weights": weights,
         "input_kind": "provided-local-NPZ" if args.fixture else "synthetic-noise",
+        "fixture_restricted_to_untrained": bool(
+            arrays.get("native_untrained_only", False)
+        ),
         **info,
         "parameters": sum(p.numel() for p in module.parameters()),
         "embedding_shape": list(embeddings.shape),

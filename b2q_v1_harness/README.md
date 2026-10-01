@@ -29,6 +29,10 @@ An optional NPZ accepts `neuro [N,32,25]`, `channel_positions [N,32,2]`, `subjec
 
 The [native CPU report](verification/NATIVE_CPU_REPORT.md) records a successful full-size CPU forward/backward and checkpoint roundtrip. These used generated noise and explicitly untrained weights. Your GPU checkpoint remains a separate missing artifact, not a failed CPU capability. The [RunPod branch](https://github.com/ovoarnav/brain2qwerty-eeg32-research/tree/experiment/b2q-v1-eeg32-runpod) documents the training paths and keeps checkpoints outside Git.
 
+## Recovered real EEG handoff
+
+The later [recovered handoff audit](verification/RECOVERED_HANDOFF_REPORT.md) verifies the uploaded real motor-32 EEG replay assets and reproduces their saved calibrated classifier metrics. It also records full native CPU execution on 124 recorded-input windows. The upload contains prediction exports and source, but no fitted classifier/neural weights; those native passes therefore remain explicitly untrained. `tools/inspect_handoff.py` prepares local fixtures restricted to untrained execution because the original native preprocessing and trained subject mapping are unavailable.
+
 ## Proxy embedding comparison
 
 The full [embedding comparison report](verification/embedding_comparison/REPORT.md) covers 10 local-embedding variants, five matched seeds, two protocols and 100 completed training runs. On the balanced synthetic split, baseline test mismatch was 31.21%; 48-wide linear projection reached 20.00%; the validation-selected nonlinear 48-wide projection reached 19.48%. The original small fixture ranked variants differently. Read the controls, per-seed variation, projection-only control and embedding-rank measurements before drawing conclusions. These are synthetic results, not real EEG accuracy.

@@ -1,0 +1,380 @@
+{
+  "status": "PASS",
+  "scope": "recomputed saved predictions and real EEG replay alignment; no classifier forward or retraining",
+  "model_in_bundle": "calibrated StandardScaler + LogisticRegression; fitted weights absent",
+  "neural_checkpoint_candidates": [],
+  "prediction_rows_total": 3942,
+  "replay_trials_total": 48,
+  "replay_windows_total": 1744,
+  "mean_participant_top1": 0.16806135010018686,
+  "mean_participant_top5": 0.5552813652167248,
+  "native_fixture_contract": {
+    "purpose": "untrained full native V1 recorded-input execution only",
+    "source_sampling_hz": 100,
+    "source_window_seconds": [
+      -0.2,
+      0.3
+    ],
+    "source_units": "microvolts",
+    "conversion": "multiply by 1e-6, scipy resample_poly up=1 down=2",
+    "native_sampling_hz": 50,
+    "native_training_preprocessing_reproduced": false,
+    "subject_index_mapping": "placeholder zero, only for untrained execution",
+    "labels_exported": false,
+    "checkpoint_mode_allowed": false
+  },
+  "subjects": [
+    {
+      "subject": "002",
+      "prediction_rows": 1047,
+      "alphabet_size": 30,
+      "recomputed_metrics": {
+        "balanced_accuracy": 0.07287614958023537,
+        "macro_f1": 0.06407724828103521,
+        "cross_entropy": 2.832846900377115,
+        "top_1_accuracy": 0.15759312320916904,
+        "top_3_accuracy": 0.3753581661891118,
+        "top_5_accuracy": 0.5109837631327603
+      },
+      "max_difference_from_saved_metrics": 6.938893903907228e-17,
+      "replay_trials": 12,
+      "replay_windows": 408,
+      "replay_shapes": [
+        [
+          37,
+          32,
+          50
+        ],
+        [
+          34,
+          32,
+          50
+        ],
+        [
+          30,
+          32,
+          50
+        ],
+        [
+          33,
+          32,
+          50
+        ],
+        [
+          18,
+          32,
+          50
+        ],
+        [
+          25,
+          32,
+          50
+        ],
+        [
+          43,
+          32,
+          50
+        ],
+        [
+          35,
+          32,
+          50
+        ],
+        [
+          27,
+          32,
+          50
+        ],
+        [
+          40,
+          32,
+          50
+        ],
+        [
+          43,
+          32,
+          50
+        ],
+        [
+          43,
+          32,
+          50
+        ]
+      ],
+      "replay_alignment": "PASS",
+      "prediction_sha256": "f553d416157011f49bd759f297c609d94e0d60492f8ea4c2aa73e7093ad914c5",
+      "replay_sha256": "fbf1cc65fec9e6be78b8ae8b46139287f1edca5cb791fe6241748b6536bf1455",
+      "native_fixture": "b2q_v1_harness/results/recovered_handoff/real-replay-002-untrained-only.npz",
+      "native_fixture_sha256": "f0abff0d0b726b487ab742fc9ff050322794ae7bb5188fcc918a4b3d22002271",
+      "native_fixture_shape": [
+        37,
+        32,
+        25
+      ]
+    },
+    {
+      "subject": "006",
+      "prediction_rows": 1011,
+      "alphabet_size": 26,
+      "recomputed_metrics": {
+        "balanced_accuracy": 0.08312112278387533,
+        "macro_f1": 0.07192532836630781,
+        "cross_entropy": 2.642074629608643,
+        "top_1_accuracy": 0.17804154302670624,
+        "top_3_accuracy": 0.42037586547972305,
+        "top_5_accuracy": 0.5736894164193868
+      },
+      "max_difference_from_saved_metrics": 5.551115123125783e-17,
+      "replay_trials": 12,
+      "replay_windows": 442,
+      "replay_shapes": [
+        [
+          28,
+          32,
+          50
+        ],
+        [
+          44,
+          32,
+          50
+        ],
+        [
+          33,
+          32,
+          50
+        ],
+        [
+          35,
+          32,
+          50
+        ],
+        [
+          31,
+          32,
+          50
+        ],
+        [
+          22,
+          32,
+          50
+        ],
+        [
+          33,
+          32,
+          50
+        ],
+        [
+          38,
+          32,
+          50
+        ],
+        [
+          48,
+          32,
+          50
+        ],
+        [
+          44,
+          32,
+          50
+        ],
+        [
+          46,
+          32,
+          50
+        ],
+        [
+          40,
+          32,
+          50
+        ]
+      ],
+      "replay_alignment": "PASS",
+      "prediction_sha256": "c79a0ae37ea28222008c8854cb51e7aa44158efd2e74111681753e00be3ec403",
+      "replay_sha256": "8d4d8adc11f80f35be8000f1dbf4981168924a7156d065005dfc750843f33958",
+      "native_fixture": "b2q_v1_harness/results/recovered_handoff/real-replay-006-untrained-only.npz",
+      "native_fixture_sha256": "d1dbcdcd31e8fc2dad7cf11e43e89d52a80a65380cf69f573459720739168848",
+      "native_fixture_shape": [
+        28,
+        32,
+        25
+      ]
+    },
+    {
+      "subject": "007",
+      "prediction_rows": 906,
+      "alphabet_size": 26,
+      "recomputed_metrics": {
+        "balanced_accuracy": 0.08719770840486131,
+        "macro_f1": 0.0783187900581145,
+        "cross_entropy": 2.64831194346261,
+        "top_1_accuracy": 0.15562913907284767,
+        "top_3_accuracy": 0.38852097130242824,
+        "top_5_accuracy": 0.5618101545253863
+      },
+      "max_difference_from_saved_metrics": 8.326672684688674e-17,
+      "replay_trials": 12,
+      "replay_windows": 466,
+      "replay_shapes": [
+        [
+          37,
+          32,
+          50
+        ],
+        [
+          50,
+          32,
+          50
+        ],
+        [
+          45,
+          32,
+          50
+        ],
+        [
+          42,
+          32,
+          50
+        ],
+        [
+          42,
+          32,
+          50
+        ],
+        [
+          39,
+          32,
+          50
+        ],
+        [
+          46,
+          32,
+          50
+        ],
+        [
+          50,
+          32,
+          50
+        ],
+        [
+          25,
+          32,
+          50
+        ],
+        [
+          28,
+          32,
+          50
+        ],
+        [
+          35,
+          32,
+          50
+        ],
+        [
+          27,
+          32,
+          50
+        ]
+      ],
+      "replay_alignment": "PASS",
+      "prediction_sha256": "2f33f75b4253f838645d2ffcb11e4b3bfb1d1dae2f911043c20701ed523109fc",
+      "replay_sha256": "e42f0db5557acbd4a40654951cc80c7774279f092adc5521212dce0d1d760a83",
+      "native_fixture": "b2q_v1_harness/results/recovered_handoff/real-replay-007-untrained-only.npz",
+      "native_fixture_sha256": "9993ef1983847a29798f90e1bc7ce9c94fec4dc483dae01f424a6a2e6b7f855e",
+      "native_fixture_shape": [
+        37,
+        32,
+        25
+      ]
+    },
+    {
+      "subject": "010",
+      "prediction_rows": 978,
+      "alphabet_size": 26,
+      "recomputed_metrics": {
+        "balanced_accuracy": 0.07417244644395554,
+        "macro_f1": 0.06642476784539628,
+        "cross_entropy": 2.7100111720558187,
+        "top_1_accuracy": 0.18098159509202455,
+        "top_3_accuracy": 0.4130879345603272,
+        "top_5_accuracy": 0.5746421267893661
+      },
+      "max_difference_from_saved_metrics": 8.326672684688674e-17,
+      "replay_trials": 12,
+      "replay_windows": 428,
+      "replay_shapes": [
+        [
+          22,
+          32,
+          50
+        ],
+        [
+          27,
+          32,
+          50
+        ],
+        [
+          34,
+          32,
+          50
+        ],
+        [
+          31,
+          32,
+          50
+        ],
+        [
+          33,
+          32,
+          50
+        ],
+        [
+          31,
+          32,
+          50
+        ],
+        [
+          36,
+          32,
+          50
+        ],
+        [
+          41,
+          32,
+          50
+        ],
+        [
+          39,
+          32,
+          50
+        ],
+        [
+          40,
+          32,
+          50
+        ],
+        [
+          43,
+          32,
+          50
+        ],
+        [
+          51,
+          32,
+          50
+        ]
+      ],
+      "replay_alignment": "PASS",
+      "prediction_sha256": "a9106e5dfc3ac2da6510dcd8d9dc047d402aeed1763c2df7e594176ee0c5b86a",
+      "replay_sha256": "a2ff23c1612c0d857baad315accc81fbbe947524cdf38d9653cf47cebe10ab0c",
+      "native_fixture": "b2q_v1_harness/results/recovered_handoff/real-replay-010-untrained-only.npz",
+      "native_fixture_sha256": "d3acffb6152f98d2055c84c1d7826a348ceb40a24fd2869594e7eb32546aadc8",
+      "native_fixture_shape": [
+        22,
+        32,
+        25
+      ]
+    }
+  ]
+}

@@ -145,3 +145,14 @@ def test_lightning_configuration_pickle_requires_explicit_trusted_mode(tmp_path)
 def test_missing_checkpoint_never_silently_uses_random_weights(tmp_path):
     with pytest.raises(FileNotFoundError, match="not on this machine"):
         native.restore_checkpoint(tmp_path / "missing-best.ckpt")
+
+
+def test_recorded_input_bridge_cannot_be_used_as_trained_eeg_evaluation(tmp_path):
+    arrays = native.synthetic_arrays(2)
+    arrays["native_untrained_only"] = np.asarray(True)
+    path = tmp_path / "recorded-shape-only.npz"
+    np.savez_compressed(path, **arrays)
+    loaded = native.read_fixture(path)
+    native.validate_weight_mode(loaded, untrained=True)
+    with pytest.raises(ValueError, match="restricted to --untrained"):
+        native.validate_weight_mode(loaded, untrained=False)
