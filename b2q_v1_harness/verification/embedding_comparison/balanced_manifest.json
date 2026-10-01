@@ -1,0 +1,96 @@
+{
+  "protocol": "balanced",
+  "scope": "synthetic amplitude-coded developer experiment, not EEG accuracy",
+  "python": "3.12.14",
+  "torch": "2.10.0+cpu",
+  "seeds": [
+    7,
+    17,
+    27,
+    37,
+    47
+  ],
+  "steps": 160,
+  "cpu_threads": 2,
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.003,
+    "weight_decay": 0.01
+  },
+  "context_width": 32,
+  "fused_width": 32,
+  "split_hashes": {
+    "train": "6cc1c87b531faa47f752795bc0050cb72bef6aeda2e18c5b51ea9c27fe608e67",
+    "validation": "e199ddcc9def6aaea752b58c9ab83830f90447e00281f2c524478eea4f469aec",
+    "test": "1288e93385dae1d6b3dff207cfef20009560817b74c97494207aebfed40af395"
+  },
+  "split_sizes": {
+    "train": 232,
+    "validation": 116,
+    "test": 232
+  },
+  "initialization": "context and head match the reference baseline for each seed",
+  "selection": "lowest mean final validation character mismatch; baseline wins exact ties; test evaluated only after selection",
+  "variants": {
+    "baseline32": {
+      "width": 32,
+      "activation": "linear",
+      "adapter": "identity",
+      "normalize": false
+    },
+    "linear2": {
+      "width": 2,
+      "activation": "linear",
+      "adapter": "linear",
+      "normalize": false
+    },
+    "linear16": {
+      "width": 16,
+      "activation": "linear",
+      "adapter": "linear",
+      "normalize": false
+    },
+    "linear32_control": {
+      "width": 32,
+      "activation": "linear",
+      "adapter": "linear",
+      "normalize": false
+    },
+    "linear48": {
+      "width": 48,
+      "activation": "linear",
+      "adapter": "linear",
+      "normalize": false
+    },
+    "linear64": {
+      "width": 64,
+      "activation": "linear",
+      "adapter": "linear",
+      "normalize": false
+    },
+    "linear96": {
+      "width": 96,
+      "activation": "linear",
+      "adapter": "linear",
+      "normalize": false
+    },
+    "gelu48": {
+      "width": 48,
+      "activation": "gelu",
+      "adapter": "linear",
+      "normalize": false
+    },
+    "mlp48": {
+      "width": 48,
+      "activation": "linear",
+      "adapter": "mlp",
+      "normalize": false
+    },
+    "normalized48": {
+      "width": 48,
+      "activation": "linear",
+      "adapter": "linear",
+      "normalize": true
+    }
+  }
+}

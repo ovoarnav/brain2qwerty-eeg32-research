@@ -2,6 +2,14 @@
 
 This is a newly generated harness, not the unavailable kit described in the uploaded historical documents.
 
+## Embedding experiments completed October 1, 2026
+
+The [embedding report](embedding_comparison/REPORT.md) supersedes the earlier single-candidate experiment as evidence about embedding changes. Ran 10 variants × five seeds × two protocols = 100 completed fits, 16,000 fixed-budget AdamW updates. All variants passed the 16 contracts in both protocols. The larger balanced protocol uses independent shuffled 232/116/232 synthetic train/validation/test examples; the legacy protocol uses 61-character noise replicas. Context/head architecture and initialization are matched for each seed, context/fused widths stay 32, and validation selection is recorded before test evaluation.
+
+Balanced mean test character mismatch: baseline 31.21%, 32-wide projection control 20.17%, linear48 20.00%, linear64 16.21%, validation-selected mlp48 19.48%. The legacy fixture reverses several rankings. Centered embedding spectra confirm linear widths >=4 retain rank 4 in this four-statistic proxy; nonlinear sensor/projector variants expand the sampled basis. Full per-seed errors, curves, candidate code, hashes, selection records and geometry are preserved; all trained tensor checkpoints are included in the separate results archive. No real EEG performance or nested CLI execution is claimed.
+
+All 16 controller/tool/study/analysis tests passed. Ruff checks/formatting passed for the five new experiment/analysis Python files. PNG/PDF figures were generated and visually inspected. The original 18-test project suite and native backend results below are unchanged historical validation for this branch.
+
 Verified in the current Linux cloud machine with Python 3.12.14, PyTorch 2.10.0+cpu and NumPy 2.3.5:
 
 - All 16 baseline contracts passed.

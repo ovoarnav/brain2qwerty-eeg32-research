@@ -2,6 +2,22 @@
 
 This is a **new implementation** based on the supplied workflow documents; the original harness code was unavailable. Its outputs replace neither the original build evidence nor real EEG evaluation. It is a synthetic CPU testbed for representation changes, contract enforcement, and a bounded Codex loop. There is no deployment stage.
 
+## Embedding comparison: actual experiment results
+
+The full [embedding comparison report](verification/embedding_comparison/REPORT.md) covers 10 local-embedding variants, five matched seeds, two protocols and 100 completed training runs. On the balanced synthetic split, baseline test mismatch was 31.21%; 48-wide linear projection reached 20.00%; the validation-selected nonlinear 48-wide projection reached 19.48%. The original small fixture ranked variants differently. Read the controls, per-seed variation, projection-only control and embedding-rank measurements before drawing conclusions. These are synthetic results, not real EEG accuracy.
+
+To run the experiment in the separate small environment:
+
+```bash
+python embedding_study.py --protocol balanced --output results/new-balanced
+python embedding_study.py --protocol legacy --output results/new-legacy
+python -m pip install -r requirements-analysis.txt
+python embedding_analysis.py --balanced results/new-balanced --legacy results/new-legacy --output results/new-plots
+python -m unittest -v test_controller test_tools test_embedding_study test_embedding_analysis
+```
+
+Output folders must be new. Default settings are five seeds and 160 updates per seed. Candidate files, full histories, CSVs, contracts, manifests, embedding geometry and PNG/PDF plots are committed under verification/embedding_comparison/. The separate embedding experiment archive includes every trained checkpoint; credentials and Python environments are excluded. The original model/scientific EEG32 comparison remains unchanged.
+
 ## Start on your machine
 
 Keep this environment separate from the original V1 environment. Python 3.12+, Git, and an authenticated Codex CLI are prerequisites for agent runs. The self-test needs no Codex or credentials.

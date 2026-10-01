@@ -1,0 +1,662 @@
+{
+  "baseline32": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "linear2": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "linear16": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "linear32_control": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "linear48": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "linear64": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "linear96": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "gelu48": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "mlp48": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ],
+  "normalized48": [
+    {
+      "name": "finite_one_logit_row_per_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "channel_and_window_shape_variants",
+      "status": "PASS"
+    },
+    {
+      "name": "single_keystroke",
+      "status": "PASS"
+    },
+    {
+      "name": "sentence_isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ragged_padding_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "subject_sentence_composite_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "interleaved_rows_restore_original_order",
+      "status": "PASS"
+    },
+    {
+      "name": "joint_sensor_coordinate_permutation",
+      "status": "PASS"
+    },
+    {
+      "name": "coordinate_path_has_effect",
+      "status": "PASS"
+    },
+    {
+      "name": "label_canary_independence",
+      "status": "PASS"
+    },
+    {
+      "name": "upstream_gradient_connectivity",
+      "status": "PASS"
+    },
+    {
+      "name": "checkpoint_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "declared_representation_shapes",
+      "status": "PASS"
+    },
+    {
+      "name": "parameter_budget",
+      "status": "PASS"
+    },
+    {
+      "name": "repeatable_eval",
+      "status": "PASS"
+    },
+    {
+      "name": "sensor_path_has_effect",
+      "status": "PASS"
+    }
+  ]
+}

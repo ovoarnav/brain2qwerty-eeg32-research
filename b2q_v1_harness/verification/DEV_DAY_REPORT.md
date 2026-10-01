@@ -1,5 +1,7 @@
 # Developer harness report
 
+**Current embedding evidence:** see [the 100-run embedding comparison](embedding_comparison/REPORT.md), including width, projection, activation and normalization changes, per-seed errors, loss curves and measured embedding geometry. The single candidate below is retained as earlier evidence and is insufficient to assess the intervention by itself.
+
 See BUILD_VERIFICATION.md for scope, limitations and provenance.
 
 See SESSION_PACKET.md for the demonstration sequence and evidence-based answers to all five uploaded session questions. MD_REVIEW.md records the complete source-document review and remaining prerequisites.

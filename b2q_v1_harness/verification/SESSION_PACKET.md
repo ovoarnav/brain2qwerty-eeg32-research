@@ -1,5 +1,7 @@
 # Brain2Qwerty agentic CI session packet
 
+The later [100-run embedding comparison](embedding_comparison/REPORT.md) now provides the controlled embedding study: 10 variants, five seeds, two protocols, curves and numerical ranks. The single manual experiment discussed below remains historical evidence; use the new comparison for conclusions about how embedding changes move results.
+
 ## What we can demonstrate
 
 “I have a small CPU harness that checks a representation change before training and decides whether to retain it. The new 48-to-32 adapter preserves the tested interfaces and gradients but worsens the synthetic developer metric, so it is rejected. A native bridge also exposes an ordering-contract difference with V1. The nested autonomous Codex connection is blocked by a proxy, and I kept that failure separate from the manual experiment.”

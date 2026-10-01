@@ -1,0 +1,1806 @@
+{
+  "scope": "post-selection, label-free embedding geometry on synthetic test inputs",
+  "relative_singular_value_rank_tolerance": 1e-05,
+  "variants": {
+    "baseline32": {
+      "source_sha256": "4fb2104e1991540aee883ef05234f3a34f99fc7124a7b06ebcd1c132f510a545",
+      "per_seed": [
+        {
+          "seed": 7,
+          "initial": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6815049728929308,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.4917792907496783
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6815049728929308,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.4917792907496783
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6905725164087286,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.252803610196848
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6905725164087286,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.252803610196848
+            }
+          }
+        },
+        {
+          "seed": 17,
+          "initial": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.563000332274937,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.7608750585173762
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.563000332274937,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.7608750585173762
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5546396906296958,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.5229453658482095
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5546396906296958,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.5229453658482095
+            }
+          }
+        },
+        {
+          "seed": 27,
+          "initial": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.769077016148687,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.379045998375258
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.769077016148687,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.379045998375258
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7397696657501585,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.254504103591503
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7397696657501585,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.254504103591503
+            }
+          }
+        },
+        {
+          "seed": 37,
+          "initial": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7377486908117246,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.2728339419225216
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7377486908117246,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.2728339419225216
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.8134920715061091,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.111835251195828
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.8134920715061091,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.111835251195828
+            }
+          }
+        },
+        {
+          "seed": 47,
+          "initial": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6808550149149752,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.558932999353329
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6808550149149752,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.558932999353329
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.628265812213539,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.299628566768008
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.628265812213539,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.299628566768008
+            }
+          }
+        }
+      ]
+    },
+    "linear2": {
+      "source_sha256": "516a716ce89e77363fcab914b6f5ab2680a456a96eb0d1472a6746867b5fda08",
+      "per_seed": [
+        {
+          "seed": 7,
+          "initial": {
+            "local": {
+              "width": 2,
+              "numerical_rank": 2,
+              "participation_ratio": 1.6722069263340977,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.2906483169809394
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 2,
+              "participation_ratio": 1.640436530665429,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.38948787907041
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 2,
+              "numerical_rank": 2,
+              "participation_ratio": 1.8478152140949085,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.2701074627103833
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 2,
+              "participation_ratio": 1.8888047618271087,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.2573358512755135
+            }
+          }
+        },
+        {
+          "seed": 17,
+          "initial": {
+            "local": {
+              "width": 2,
+              "numerical_rank": 2,
+              "participation_ratio": 1.056382529164751,
+              "dimensions_for_95_percent_variance": 1,
+              "mean_vector_norm": 0.490635895649446
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 2,
+              "participation_ratio": 1.0592846618639762,
+              "dimensions_for_95_percent_variance": 1,
+              "mean_vector_norm": 2.2598569039752854
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 2,
+              "numerical_rank": 2,
+              "participation_ratio": 1.0773527787585688,
+              "dimensions_for_95_percent_variance": 1,
+              "mean_vector_norm": 0.6604795506501581
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 2,
+              "participation_ratio": 1.0630931473969754,
+              "dimensions_for_95_percent_variance": 1,
+              "mean_vector_norm": 2.2109159722841967
+            }
+          }
+        },
+        {
+          "seed": 27,
+          "initial": {
+            "local": {
+              "width": 2,
+              "numerical_rank": 2,
+              "participation_ratio": 1.0193481314567896,
+              "dimensions_for_95_percent_variance": 1,
+              "mean_vector_norm": 0.822541897699811
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 2,
+              "participation_ratio": 1.0232921768023133,
+              "dimensions_for_95_percent_variance": 1,
+              "mean_vector_norm": 3.122894525731125
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 2,
+              "numerical_rank": 2,
+              "participation_ratio": 1.0763489167136124,
+              "dimensions_for_95_percent_variance": 1,
+              "mean_vector_norm": 0.6785837205708386
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 2,
+              "participation_ratio": 1.064053033490715,
+              "dimensions_for_95_percent_variance": 1,
+              "mean_vector_norm": 2.6269319509755085
+            }
+          }
+        },
+        {
+          "seed": 37,
+          "initial": {
+            "local": {
+              "width": 2,
+              "numerical_rank": 2,
+              "participation_ratio": 1.3760718466587205,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.5078864760179874
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 2,
+              "participation_ratio": 1.6795829233704993,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.9144407316173875
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 2,
+              "numerical_rank": 2,
+              "participation_ratio": 1.3278912546728194,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.4815399579242452
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 2,
+              "participation_ratio": 1.4068015503854312,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.6184436341937936
+            }
+          }
+        },
+        {
+          "seed": 47,
+          "initial": {
+            "local": {
+              "width": 2,
+              "numerical_rank": 2,
+              "participation_ratio": 1.1675925694496403,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.3989633322137148
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 2,
+              "participation_ratio": 1.2014946586851378,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.649007673564765
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 2,
+              "numerical_rank": 2,
+              "participation_ratio": 1.3883095024260976,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.4647821727986189
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 2,
+              "participation_ratio": 1.3978295708814246,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.499428668292515
+            }
+          }
+        }
+      ]
+    },
+    "linear16": {
+      "source_sha256": "99664120766c2949b1a83989118f042b053af433ff75d354600ea42e8710e763",
+      "per_seed": [
+        {
+          "seed": 7,
+          "initial": {
+            "local": {
+              "width": 16,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5458365346836913,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.5658686943567448
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5080603322659638,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.3397757061129896
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 16,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7042450855092752,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.51497981768277
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6802846149362936,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.39666206087411
+            }
+          }
+        },
+        {
+          "seed": 17,
+          "initial": {
+            "local": {
+              "width": 16,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5651158235407827,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.154989652500601
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5050299787017163,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.078941026530451
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 16,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5246597582880266,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.074666674029146
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.3487183510393683,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.079087468058672
+            }
+          }
+        },
+        {
+          "seed": 27,
+          "initial": {
+            "local": {
+              "width": 16,
+              "numerical_rank": 4,
+              "participation_ratio": 1.4888785680488865,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.8092519160802953
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 2.1329141521102666,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.6338150205327653
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 16,
+              "numerical_rank": 4,
+              "participation_ratio": 1.562334656008552,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.7711521994936155
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.588586586916158,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.5493225237845991
+            }
+          }
+        },
+        {
+          "seed": 37,
+          "initial": {
+            "local": {
+              "width": 16,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5746961941108442,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.7131022586967133
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7810944734347909,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.6239633137951694
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 16,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6791835999316072,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.583699589886134
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.707953140778575,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.513483669132646
+            }
+          }
+        },
+        {
+          "seed": 47,
+          "initial": {
+            "local": {
+              "width": 16,
+              "numerical_rank": 4,
+              "participation_ratio": 1.747862809552483,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.6409179397721887
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.9161628877724683,
+              "dimensions_for_95_percent_variance": 3,
+              "mean_vector_norm": 1.7641022374831996
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 16,
+              "numerical_rank": 4,
+              "participation_ratio": 1.731126236444827,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.5897954976774056
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.624827877280527,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.5341318726512356
+            }
+          }
+        }
+      ]
+    },
+    "linear32_control": {
+      "source_sha256": "5d1abebb5eff15548fc1cc1d0c55662ee6a42c9caa5a6aa71afd86fdeeeedb8a",
+      "per_seed": [
+        {
+          "seed": 7,
+          "initial": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6815049728929308,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.4917792907496783
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7166699898008604,
+              "dimensions_for_95_percent_variance": 3,
+              "mean_vector_norm": 1.6332028123462803
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.645701075596512,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.3947794833751623
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.597849841271299,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.3435270545259437
+            }
+          }
+        },
+        {
+          "seed": 17,
+          "initial": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.563000332274937,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.7608750585173762
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.728044625327472,
+              "dimensions_for_95_percent_variance": 3,
+              "mean_vector_norm": 1.8060838966679187
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5072641256020687,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.6522230791572676
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.3379914035306688,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.672346852729809
+            }
+          }
+        },
+        {
+          "seed": 27,
+          "initial": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.769077016148687,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.379045998375258
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6619848179408128,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.3982592425062281
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7389236798750718,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.325408349249261
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7732055885838482,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.2245832312435745
+            }
+          }
+        },
+        {
+          "seed": 37,
+          "initial": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7377486908117246,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.2728339419225216
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7873671788126166,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.2767222632118596
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7049803565359885,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.192866678075965
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7095172472313258,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.177400255834022
+            }
+          }
+        },
+        {
+          "seed": 47,
+          "initial": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6808550149149752,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.558932999353329
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7762977888768328,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.5417685816948787
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6466751051424768,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.4936389743200245
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6613493271140887,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.2655218381287097
+            }
+          }
+        }
+      ]
+    },
+    "linear48": {
+      "source_sha256": "ad2ed3db3dde34985f8e0189279b4e14125a6d7c19e248cf7d673e8ae6474115",
+      "per_seed": [
+        {
+          "seed": 7,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.493814597335798,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.891367933440054
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.4830454586975539,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.6345110177573428
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5359977005959458,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.819252748484114
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.55418505410192,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.9958797013619467
+            }
+          }
+        },
+        {
+          "seed": 17,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5846049627604581,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.228105230304845
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.852601103437128,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.6607641558914454
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6465481546550969,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.1626761347151247
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7696606402890145,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.028272945083642
+            }
+          }
+        },
+        {
+          "seed": 27,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7598436854881605,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.771861018701224
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.8093406782062504,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.4983245346082223
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7157356900866605,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.7056756580711547
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.761413025204271,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.7546777933883386
+            }
+          }
+        },
+        {
+          "seed": 37,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5970557205565052,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.195250672131708
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6088848144893448,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.5218905034732078
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6346163723988867,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.092279730348362
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5037176712716367,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.915395919510473
+            }
+          }
+        },
+        {
+          "seed": 47,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.73080421721622,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.0583652933106458
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6057956483236635,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.3127622839276414
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6925983468170702,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.9872399451380485
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.630794848085059,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.7726944352786678
+            }
+          }
+        }
+      ]
+    },
+    "linear64": {
+      "source_sha256": "ad9635425a91551783c08ba73fec8fa4b9fbd823b9d8ce0f12b9f8f1ce4ce70f",
+      "per_seed": [
+        {
+          "seed": 7,
+          "initial": {
+            "local": {
+              "width": 64,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6109809969063504,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.7360510225735117
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5345512227208842,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.4065774922802619
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 64,
+              "numerical_rank": 4,
+              "participation_ratio": 1.616749496477057,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.6836405581619998
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.618239092257934,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.1627553169023717
+            }
+          }
+        },
+        {
+          "seed": 17,
+          "initial": {
+            "local": {
+              "width": 64,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6409863980711052,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.4321954769044853
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.637734779342253,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.2744741637549661
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 64,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6147901446009403,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.451894742750297
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5758466279792274,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.623732343012798
+            }
+          }
+        },
+        {
+          "seed": 27,
+          "initial": {
+            "local": {
+              "width": 64,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7879574466982397,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.6596484951664534
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7886030432810849,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.3493158561178642
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 64,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7079742984327362,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.6026369801813023
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6512037623303084,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.2337031927953594
+            }
+          }
+        },
+        {
+          "seed": 37,
+          "initial": {
+            "local": {
+              "width": 64,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6378998369842346,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.466261292022603
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.8730314446784209,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.556254020116275
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 64,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6462599365174793,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.3825054893983584
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6613299873191298,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.695897982972941
+            }
+          }
+        },
+        {
+          "seed": 47,
+          "initial": {
+            "local": {
+              "width": 64,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7037919110973307,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.5500722899326504
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.452291536432542,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.5802995564183382
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 64,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6693620693741784,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.5275452870099637
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7482631188740456,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.860290454006514
+            }
+          }
+        }
+      ]
+    },
+    "linear96": {
+      "source_sha256": "6840cb46606360fc283d75b3858215c010cf6961535a23cc61e7b2d83151809f",
+      "per_seed": [
+        {
+          "seed": 7,
+          "initial": {
+            "local": {
+              "width": 96,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6122669126036955,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.197628224825774
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.41917846289071,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.4953901422986475
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 96,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5941252415885112,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.21523041010697
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5888785842849322,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 5.002334969764998
+            }
+          }
+        },
+        {
+          "seed": 17,
+          "initial": {
+            "local": {
+              "width": 96,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6555282137579865,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.364036805033724
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.8041078505584995,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.382356188690963
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 96,
+              "numerical_rank": 4,
+              "participation_ratio": 1.643710339878787,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.289590635042736
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6912737459193639,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.421764180500998
+            }
+          }
+        },
+        {
+          "seed": 27,
+          "initial": {
+            "local": {
+              "width": 96,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6960885047525402,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.28537777172672
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.8927565584997688,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.4788088639006325
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 96,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6629616616974483,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.226274278945939
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6619523357058976,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.5728942960625965
+            }
+          }
+        },
+        {
+          "seed": 37,
+          "initial": {
+            "local": {
+              "width": 96,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6520963150378944,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.111544155611124
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.683884186377824,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.1882228427934458
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 96,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7112338507855407,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.044965452441003
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.8531368097753884,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.199113007709737
+            }
+          }
+        },
+        {
+          "seed": 47,
+          "initial": {
+            "local": {
+              "width": 96,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6911295146176801,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.573789228806867
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.3376198794293324,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.575361451016195
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 96,
+              "numerical_rank": 4,
+              "participation_ratio": 1.636884193417847,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.481327177600501
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5647895922463129,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.954474536622507
+            }
+          }
+        }
+      ]
+    },
+    "gelu48": {
+      "source_sha256": "5d3c050ff4521ec3be9eaf9f44f2b194187a24c303629b535ae439f9975daca1",
+      "per_seed": [
+        {
+          "seed": 7,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 40,
+              "participation_ratio": 1.5615885604453277,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.6390317621720445
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 32,
+              "participation_ratio": 1.671490909662185,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.0931963251778316
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 41,
+              "participation_ratio": 1.6160755577971797,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.7082700898898378
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 29,
+              "participation_ratio": 1.6161745938164054,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.4270429697426767
+            }
+          }
+        },
+        {
+          "seed": 17,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 40,
+              "participation_ratio": 1.531617250170857,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.7235986485712025
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 31,
+              "participation_ratio": 1.5952853416738337,
+              "dimensions_for_95_percent_variance": 3,
+              "mean_vector_norm": 1.0450819570431977
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 42,
+              "participation_ratio": 1.6261673553868519,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.7578660864077666
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 29,
+              "participation_ratio": 1.7191605419319265,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.2087281771497602
+            }
+          }
+        },
+        {
+          "seed": 27,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 39,
+              "participation_ratio": 1.8311923439790676,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.4769387359364747
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 31,
+              "participation_ratio": 1.8267878969751046,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.858081763319816
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 40,
+              "participation_ratio": 1.9058227667849608,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.5191369043971108
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 30,
+              "participation_ratio": 2.0197590913132,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.2153334121939667
+            }
+          }
+        },
+        {
+          "seed": 37,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 40,
+              "participation_ratio": 1.6659892384385906,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.6110048603298277
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 31,
+              "participation_ratio": 1.6177007937772285,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.9488053704216551
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 41,
+              "participation_ratio": 1.7629585663402647,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.7246792550437329
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 30,
+              "participation_ratio": 1.5790776684764531,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.3894634243968533
+            }
+          }
+        },
+        {
+          "seed": 47,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 39,
+              "participation_ratio": 1.6651067728809026,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.6820351271108378
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 31,
+              "participation_ratio": 1.5805216939136886,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.8945969848037485
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 40,
+              "participation_ratio": 1.6852879773282379,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.8017097696506221
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 30,
+              "participation_ratio": 1.5477431969876256,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 1.4075123803350984
+            }
+          }
+        }
+      ]
+    },
+    "mlp48": {
+      "source_sha256": "121c8337c5da716668fa2f643c721b2f07bff930b39e79840f621308964b92b4",
+      "per_seed": [
+        {
+          "seed": 7,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.493814597335798,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.891367933440054
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 25,
+              "participation_ratio": 1.4046988665521014,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.532269888872416
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5337863563513732,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.9793973815481043
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 30,
+              "participation_ratio": 1.600069867566351,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 4.630848455440579
+            }
+          }
+        },
+        {
+          "seed": 17,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5846049627604581,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.228105230304845
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 25,
+              "participation_ratio": 1.703112887203925,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.8166177362587389
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.6051434665583009,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.2240488627399446
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 30,
+              "participation_ratio": 1.8174138886474487,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 5.236608160647566
+            }
+          }
+        },
+        {
+          "seed": 27,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7598436854881605,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.771861018701224
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 26,
+              "participation_ratio": 1.8378892670342741,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.6767274339194924
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.8059516392080561,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.953944014665417
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 30,
+              "participation_ratio": 1.8583751109400088,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 5.42731498207644
+            }
+          }
+        },
+        {
+          "seed": 37,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.5970557205565052,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.195250672131708
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 26,
+              "participation_ratio": 1.4790892779556826,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.8811574086739329
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.603092856208968,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.4672675769315577
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 31,
+              "participation_ratio": 1.5700430061156825,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 6.969818956377713
+            }
+          }
+        },
+        {
+          "seed": 47,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.73080421721622,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.0583652933106458
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 25,
+              "participation_ratio": 1.4439409752993217,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 0.5595379163092573
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 4,
+              "participation_ratio": 1.7546262296121335,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.4318424362866238
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 31,
+              "participation_ratio": 1.9744319186118358,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 7.260845620605204
+            }
+          }
+        }
+      ]
+    },
+    "normalized48": {
+      "source_sha256": "bfac5d7963bc39878cdab948ebfa68b5fa95f2815b3ccfd4fd05931d106a0325",
+      "per_seed": [
+        {
+          "seed": 7,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 5,
+              "participation_ratio": 1.54815115039036,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 6.927983934390087
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 5,
+              "participation_ratio": 1.6083323496390443,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.6743319789869044
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 5,
+              "participation_ratio": 2.0240059268727335,
+              "dimensions_for_95_percent_variance": 3,
+              "mean_vector_norm": 7.93142533141434
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 5,
+              "participation_ratio": 2.1751089880772243,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 14.607246451118863
+            }
+          }
+        },
+        {
+          "seed": 17,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 5,
+              "participation_ratio": 1.5901055596760734,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 6.928029152171783
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 5,
+              "participation_ratio": 1.8024165034157547,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.4423051908274087
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 5,
+              "participation_ratio": 2.007737642913599,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 7.701543447352168
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 5,
+              "participation_ratio": 2.1018839592168836,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 12.840577631572542
+            }
+          }
+        },
+        {
+          "seed": 27,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 5,
+              "participation_ratio": 1.7639686958931882,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 6.927960447433108
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 5,
+              "participation_ratio": 1.7828415105077875,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.6270338128044357
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 5,
+              "participation_ratio": 2.1013148106302886,
+              "dimensions_for_95_percent_variance": 3,
+              "mean_vector_norm": 7.723410973410213
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 5,
+              "participation_ratio": 2.15630316094819,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 13.654008197038236
+            }
+          }
+        },
+        {
+          "seed": 37,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 5,
+              "participation_ratio": 1.6401396796492012,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 6.928029478828535
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 5,
+              "participation_ratio": 1.7690733144766273,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 3.1476434868193293
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 5,
+              "participation_ratio": 1.9531500492805927,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 7.615680777458002
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 5,
+              "participation_ratio": 2.0109569357460813,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 11.732321536843594
+            }
+          }
+        },
+        {
+          "seed": 47,
+          "initial": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 5,
+              "participation_ratio": 1.739085200798708,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 6.928015683406838
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 5,
+              "participation_ratio": 1.7377866143161118,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 2.8204799725556025
+            }
+          },
+          "trained": {
+            "local": {
+              "width": 48,
+              "numerical_rank": 5,
+              "participation_ratio": 2.006303016211832,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 7.598336853517515
+            },
+            "projected": {
+              "width": 32,
+              "numerical_rank": 5,
+              "participation_ratio": 2.0142549519241895,
+              "dimensions_for_95_percent_variance": 2,
+              "mean_vector_norm": 11.709936009709871
+            }
+          }
+        }
+      ]
+    }
+  }
+}
