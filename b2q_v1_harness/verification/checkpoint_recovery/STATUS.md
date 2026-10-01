@@ -32,7 +32,7 @@ All outputs were finite `[1744,29]` logits. Before/after hashes of every model p
 
 **These numbers use explicitly untrained native weights.** They show how this graph's outputs move under embedding interventions; they do not measure the lost GPU model's behavior or an EEG accuracy improvement. Recorded replay inputs do not recover the trained robust scaler or subject-index mapping. No labels were used, so no accuracy/CE claim is made. Existing saved linear-classifier metrics remain a separate historical result.
 
-Machine-readable evidence is [native_embedding_replay_all.json](../native_embedding_replay_all.json). The standalone chart is supplied as PNG and PDF. Raw EEG, sentence text and weights are excluded from the source/recovery ZIPs.
+Machine-readable evidence is [native_embedding_replay_all.json](../native_embedding_replay_all.json). The standalone chart is supplied as PNG and PDF. The surviving handoff's raw EEG arrays, replay text and trained weights are excluded from the source/recovery ZIPs; the source ZIP retains the repository's existing public documentation and demo assets.
 
 ## Validation and checkpoint-ready commands
 
